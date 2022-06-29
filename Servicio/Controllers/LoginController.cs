@@ -1,5 +1,6 @@
 ﻿using Comun;
 using Controlador;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
@@ -23,6 +24,12 @@ namespace Servicio.Controllers
             _usuariosCtl = new UsuariosCtl(_configuration);
         }
 
+/*         [HttpGet, Authorize]
+        public ActionResult<string> Get()
+        {
+            var userName = 
+        }
+         */
         [HttpPost]
         public IActionResult Login(string usuario, string password)
         {

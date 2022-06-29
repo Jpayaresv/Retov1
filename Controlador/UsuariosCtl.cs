@@ -47,7 +47,16 @@ namespace Controlador
 
         public IEnumerable<Usuarios> ObtenerTodos(Usuarios parameters)
         {
-            throw new NotImplementedException();
+            using var Context = new Modelo.Proveedor.Conexion(_configuration["ConnectionStrings:defaultConnection"], _configuration["ConnectionStrings:providerName"]).GetOpenConnection();
+            var _modelo = new UsuariosMdl() { ObjConn = Context };
+            var condicion = "";
+            if(parameters.Username!="") {
+                condicion = " and username='" + parameters.Username + "'";
+            }
+            if(parameters.Nombre!="") { 
+                condicion = " and nombre='" + parameters.Nombre + "'";
+            }
+            return _modelo.ObtenerTodos(condicion, string.Empty, null);
         }
 
         public Usuarios ObtenerUnicoPorLlave(Usuarios parameter)

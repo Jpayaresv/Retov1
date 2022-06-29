@@ -37,7 +37,19 @@ namespace Modelo
 
         public IEnumerable<Usuarios> ObtenerTodos(string condicion, string ordenamiento, int? limit)
         {
-            throw new NotImplementedException();
+
+            sQuery = "SELECT username, password, ultimologin, nombre, estado, fechacreacion, fechamodificacion " +
+                " FROM usuarios " +
+                     " WHERE 1=1 " ;
+            if(!string.IsNullOrEmpty(condicion)) {
+                sQuery += condicion;
+            }
+            if(!string.IsNullOrEmpty(ordenamiento)) {
+                sQuery += ordenamiento;
+            }
+            if(limit != null) sQuery += " limit " + limit;
+
+            return ObjConn.Query<Usuarios>(sQuery);
         }
 
         public Usuarios ObtenerUnicoPorLlave(Usuarios parameter)

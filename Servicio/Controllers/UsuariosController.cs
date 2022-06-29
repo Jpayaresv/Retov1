@@ -1,5 +1,6 @@
 ﻿using Comun;
 using Controlador;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -7,6 +8,7 @@ namespace Servicio.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class UsuariosController : ControllerBase
     {
         private readonly IConfiguration _configuration;
@@ -19,6 +21,25 @@ namespace Servicio.Controllers
             _usuariosCtl = new UsuariosCtl(_configuration);
 
         }
+
+        [HttpGet("Get")]
+        public IActionResult Get(Usuarios usuarios) {
+/*             RespuestaDto respuesta;
+            try
+            {
+                respuesta = 
+                return Ok(_usuariosCtl.ObtenerTodos(usuarios));
+            }   
+            catch (Exception ex)
+            {
+                _logger.LogError("{@Exception}", ex);
+                respuesta = new RespuestaDto("499", "Error Interno: " + ex.Message, TipoMensajeRespuesta.error);
+                return StatusCode(StatusCodes.Status500InternalServerError, respuesta);
+            } */
+
+            return Ok(_usuariosCtl.ObtenerTodos(usuarios));
+            
+        } 
 
         [HttpPost]
         public IActionResult CrearUsuario(Usuarios usuarios)
@@ -40,5 +61,7 @@ namespace Servicio.Controllers
 
             return Ok();
         }
+
+        
     }
 }
