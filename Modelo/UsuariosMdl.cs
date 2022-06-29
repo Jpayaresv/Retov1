@@ -14,14 +14,14 @@ namespace Modelo
     {
         public bool Actualizar(Usuarios input)
         {
-            sQuery = "UPDATE usuarios" +
+            sQuery = "UPDATE usuarios SET " +
                      "username = @username," +
                      "password = @password," +
                      "ultimologin = @ultimologin,"+
                      "nombre = @nombre," +
                      "estado = @estado," +
                      "fechacreacion = @fechacreacion,"+
-                     "fechamodificacion = @fechamodificacion," +
+                     "fechamodificacion = @fechamodificacion " +
                      "WHERE username = @username";       
 
             return ObjConn.Execute(sQuery, input) > 0;

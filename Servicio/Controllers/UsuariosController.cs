@@ -41,7 +41,7 @@ namespace Servicio.Controllers
             
         } 
 
-        [HttpPost]
+        [HttpPost("Crear")]
         public IActionResult CrearUsuario(Usuarios usuarios)
         {
             RespuestaDto respuesta;
@@ -61,6 +61,29 @@ namespace Servicio.Controllers
 
             return Ok();
         }
+
+        [HttpPost("Actualizar")]
+        public IActionResult ActualizarUsuario(Usuarios usuarios)
+        {
+            RespuestaDto respuesta;
+            try
+            {
+                // valido la información
+                respuesta = _usuariosCtl.Actualizar(usuarios);
+                return Ok(respuesta);
+
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("{@Exception}", ex);
+                respuesta = new RespuestaDto("499", "Error Interno: " + ex.Message, TipoMensajeRespuesta.error);
+                return StatusCode(StatusCodes.Status500InternalServerError, respuesta);
+            }
+
+            return Ok();
+        }
+
+        
 
         
     }

@@ -21,7 +21,22 @@ namespace Controlador
 
         public RespuestaDto Actualizar(Usuarios obj)
         {
-            throw new NotImplementedException();
+            var response = new RespuestaDto();
+            using var Context = new Modelo.Proveedor.Conexion(_configuration["ConnectionStrings:defaultConnection"], _configuration["ConnectionStrings:providerName"]).GetOpenConnection();
+            var _modelo = new UsuariosMdl() { ObjConn = Context };
+            var existeObjeto = _modelo.ExistenRegistros("usuarios", "username", "username = '" + obj.Username + "'");
+            if (!existeObjeto)
+            {
+                response.AgregarInformacion(Informaciones._202);
+            }
+            else
+            {
+                if (_modelo.Actualizar(obj))
+                    response.AgregarCompletado(Completados._102);
+                else
+                    response.AgregarInformacion(Informaciones._211);
+            }
+            return response;
         }
 
         public RespuestaDto Crear(Usuarios obj)
