@@ -1,0 +1,34 @@
+C:\ie\proyectos\demos\Retov1\Controlador\obj\Debug\net6.0\Controlador.csproj.AssemblyReference.cache
+C:\ie\proyectos\demos\Retov1\Controlador\obj\Debug\net6.0\Controlador.GeneratedMSBuildEditorConfig.editorconfig
+C:\ie\proyectos\demos\Retov1\Controlador\obj\Debug\net6.0\Controlador.AssemblyInfoInputs.cache
+C:\ie\proyectos\demos\Retov1\Controlador\obj\Debug\net6.0\Controlador.AssemblyInfo.cs
+C:\ie\proyectos\demos\Retov1\Controlador\obj\Debug\net6.0\Controlador.csproj.CoreCompileInputs.cache
+C:\ie\proyectos\demos\Retov1\Controlador\bin\Debug\net6.0\Controlador.deps.json
+C:\ie\proyectos\demos\Retov1\Controlador\bin\Debug\net6.0\Controlador.dll
+C:\ie\proyectos\demos\Retov1\Controlador\bin\Debug\net6.0\Controlador.pdb
+C:\ie\proyectos\demos\Retov1\Controlador\bin\Debug\net6.0\Comun.dll
+C:\ie\proyectos\demos\Retov1\Controlador\bin\Debug\net6.0\Modelo.dll
+C:\ie\proyectos\demos\Retov1\Controlador\bin\Debug\net6.0\Comun.pdb
+C:\ie\proyectos\demos\Retov1\Controlador\bin\Debug\net6.0\Modelo.pdb
+C:\ie\proyectos\demos\Retov1\Controlador\obj\Debug\net6.0\Controlador.csproj.CopyComplete
+C:\ie\proyectos\demos\Retov1\Controlador\obj\Debug\net6.0\Controlador.dll
+C:\ie\proyectos\demos\Retov1\Controlador\obj\Debug\net6.0\refint\Controlador.dll
+C:\ie\proyectos\demos\Retov1\Controlador\obj\Debug\net6.0\Controlador.pdb
+C:\ie\proyectos\demos\Retov1\Controlador\obj\Debug\net6.0\ref\Controlador.dll
+C:\Users\Administrador\Desktop\IE Projects\demos\Retov1\Controlador\bin\Debug\net6.0\Controlador.deps.json
+C:\Users\Administrador\Desktop\IE Projects\demos\Retov1\Controlador\bin\Debug\net6.0\Controlador.dll
+C:\Users\Administrador\Desktop\IE Projects\demos\Retov1\Controlador\bin\Debug\net6.0\Controlador.pdb
+C:\Users\Administrador\Desktop\IE Projects\demos\Retov1\Controlador\bin\Debug\net6.0\Comun.dll
+C:\Users\Administrador\Desktop\IE Projects\demos\Retov1\Controlador\bin\Debug\net6.0\Modelo.dll
+C:\Users\Administrador\Desktop\IE Projects\demos\Retov1\Controlador\bin\Debug\net6.0\Comun.pdb
+C:\Users\Administrador\Desktop\IE Projects\demos\Retov1\Controlador\bin\Debug\net6.0\Modelo.pdb
+C:\Users\Administrador\Desktop\IE Projects\demos\Retov1\Controlador\obj\Debug\net6.0\Controlador.csproj.AssemblyReference.cache
+C:\Users\Administrador\Desktop\IE Projects\demos\Retov1\Controlador\obj\Debug\net6.0\Controlador.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Administrador\Desktop\IE Projects\demos\Retov1\Controlador\obj\Debug\net6.0\Controlador.AssemblyInfoInputs.cache
+C:\Users\Administrador\Desktop\IE Projects\demos\Retov1\Controlador\obj\Debug\net6.0\Controlador.AssemblyInfo.cs
+C:\Users\Administrador\Desktop\IE Projects\demos\Retov1\Controlador\obj\Debug\net6.0\Controlador.csproj.CoreCompileInputs.cache
+C:\Users\Administrador\Desktop\IE Projects\demos\Retov1\Controlador\obj\Debug\net6.0\Controlador.csproj.CopyComplete
+C:\Users\Administrador\Desktop\IE Projects\demos\Retov1\Controlador\obj\Debug\net6.0\Controlador.dll
+C:\Users\Administrador\Desktop\IE Projects\demos\Retov1\Controlador\obj\Debug\net6.0\refint\Controlador.dll
+C:\Users\Administrador\Desktop\IE Projects\demos\Retov1\Controlador\obj\Debug\net6.0\Controlador.pdb
+C:\Users\Administrador\Desktop\IE Projects\demos\Retov1\Controlador\obj\Debug\net6.0\ref\Controlador.dll

@@ -1,0 +1,84 @@
+C:\ie\proyectos\demos\Retov1\Servicio\obj\Debug\net6.0\Servicio.csproj.AssemblyReference.cache
+C:\ie\proyectos\demos\Retov1\Servicio\obj\Debug\net6.0\Servicio.GeneratedMSBuildEditorConfig.editorconfig
+C:\ie\proyectos\demos\Retov1\Servicio\obj\Debug\net6.0\Servicio.AssemblyInfoInputs.cache
+C:\ie\proyectos\demos\Retov1\Servicio\obj\Debug\net6.0\Servicio.AssemblyInfo.cs
+C:\ie\proyectos\demos\Retov1\Servicio\obj\Debug\net6.0\Servicio.csproj.CoreCompileInputs.cache
+C:\ie\proyectos\demos\Retov1\Servicio\obj\Debug\net6.0\Servicio.MvcApplicationPartsAssemblyInfo.cache
+C:\ie\proyectos\demos\Retov1\Servicio\bin\Debug\net6.0\appsettings.Development.json
+C:\ie\proyectos\demos\Retov1\Servicio\bin\Debug\net6.0\appsettings.json
+C:\ie\proyectos\demos\Retov1\Servicio\bin\Debug\net6.0\Servicio.exe
+C:\ie\proyectos\demos\Retov1\Servicio\bin\Debug\net6.0\Servicio.deps.json
+C:\ie\proyectos\demos\Retov1\Servicio\bin\Debug\net6.0\Servicio.runtimeconfig.json
+C:\ie\proyectos\demos\Retov1\Servicio\bin\Debug\net6.0\Servicio.dll
+C:\ie\proyectos\demos\Retov1\Servicio\bin\Debug\net6.0\Servicio.pdb
+C:\ie\proyectos\demos\Retov1\Servicio\bin\Debug\net6.0\Dapper.dll
+C:\ie\proyectos\demos\Retov1\Servicio\bin\Debug\net6.0\Microsoft.OpenApi.dll
+C:\ie\proyectos\demos\Retov1\Servicio\bin\Debug\net6.0\Npgsql.dll
+C:\ie\proyectos\demos\Retov1\Servicio\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\ie\proyectos\demos\Retov1\Servicio\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\ie\proyectos\demos\Retov1\Servicio\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\ie\proyectos\demos\Retov1\Servicio\bin\Debug\net6.0\Comun.dll
+C:\ie\proyectos\demos\Retov1\Servicio\bin\Debug\net6.0\Controlador.dll
+C:\ie\proyectos\demos\Retov1\Servicio\bin\Debug\net6.0\Modelo.dll
+C:\ie\proyectos\demos\Retov1\Servicio\bin\Debug\net6.0\Comun.pdb
+C:\ie\proyectos\demos\Retov1\Servicio\bin\Debug\net6.0\Controlador.pdb
+C:\ie\proyectos\demos\Retov1\Servicio\bin\Debug\net6.0\Modelo.pdb
+C:\ie\proyectos\demos\Retov1\Servicio\obj\Debug\net6.0\staticwebassets.build.json
+C:\ie\proyectos\demos\Retov1\Servicio\obj\Debug\net6.0\staticwebassets.development.json
+C:\ie\proyectos\demos\Retov1\Servicio\obj\Debug\net6.0\scopedcss\bundle\Servicio.styles.css
+C:\ie\proyectos\demos\Retov1\Servicio\obj\Debug\net6.0\Servicio.csproj.CopyComplete
+C:\ie\proyectos\demos\Retov1\Servicio\obj\Debug\net6.0\Servicio.dll
+C:\ie\proyectos\demos\Retov1\Servicio\obj\Debug\net6.0\refint\Servicio.dll
+C:\ie\proyectos\demos\Retov1\Servicio\obj\Debug\net6.0\Servicio.pdb
+C:\ie\proyectos\demos\Retov1\Servicio\obj\Debug\net6.0\Servicio.genruntimeconfig.cache
+C:\ie\proyectos\demos\Retov1\Servicio\obj\Debug\net6.0\ref\Servicio.dll
+C:\ie\proyectos\demos\Retov1\Servicio\obj\Debug\net6.0\Servicio.MvcApplicationPartsAssemblyInfo.cs
+C:\ie\proyectos\demos\Retov1\Servicio\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\ie\proyectos\demos\Retov1\Servicio\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\ie\proyectos\demos\Retov1\Servicio\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+C:\ie\proyectos\demos\Retov1\Servicio\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+C:\ie\proyectos\demos\Retov1\Servicio\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\ie\proyectos\demos\Retov1\Servicio\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+C:\ie\proyectos\demos\Retov1\Servicio\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\Administrador\Desktop\IE Projects\demos\Retov1\Servicio\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\Administrador\Desktop\IE Projects\demos\Retov1\Servicio\bin\Debug\net6.0\appsettings.json
+C:\Users\Administrador\Desktop\IE Projects\demos\Retov1\Servicio\bin\Debug\net6.0\Servicio.exe
+C:\Users\Administrador\Desktop\IE Projects\demos\Retov1\Servicio\bin\Debug\net6.0\Servicio.deps.json
+C:\Users\Administrador\Desktop\IE Projects\demos\Retov1\Servicio\bin\Debug\net6.0\Servicio.runtimeconfig.json
+C:\Users\Administrador\Desktop\IE Projects\demos\Retov1\Servicio\bin\Debug\net6.0\Servicio.dll
+C:\Users\Administrador\Desktop\IE Projects\demos\Retov1\Servicio\bin\Debug\net6.0\Servicio.pdb
+C:\Users\Administrador\Desktop\IE Projects\demos\Retov1\Servicio\bin\Debug\net6.0\Dapper.dll
+C:\Users\Administrador\Desktop\IE Projects\demos\Retov1\Servicio\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\Administrador\Desktop\IE Projects\demos\Retov1\Servicio\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\Administrador\Desktop\IE Projects\demos\Retov1\Servicio\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\Administrador\Desktop\IE Projects\demos\Retov1\Servicio\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\Administrador\Desktop\IE Projects\demos\Retov1\Servicio\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\Administrador\Desktop\IE Projects\demos\Retov1\Servicio\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Administrador\Desktop\IE Projects\demos\Retov1\Servicio\bin\Debug\net6.0\Microsoft.OpenApi.dll
+C:\Users\Administrador\Desktop\IE Projects\demos\Retov1\Servicio\bin\Debug\net6.0\Npgsql.dll
+C:\Users\Administrador\Desktop\IE Projects\demos\Retov1\Servicio\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Administrador\Desktop\IE Projects\demos\Retov1\Servicio\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Administrador\Desktop\IE Projects\demos\Retov1\Servicio\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Administrador\Desktop\IE Projects\demos\Retov1\Servicio\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\Administrador\Desktop\IE Projects\demos\Retov1\Servicio\bin\Debug\net6.0\Comun.dll
+C:\Users\Administrador\Desktop\IE Projects\demos\Retov1\Servicio\bin\Debug\net6.0\Controlador.dll
+C:\Users\Administrador\Desktop\IE Projects\demos\Retov1\Servicio\bin\Debug\net6.0\Modelo.dll
+C:\Users\Administrador\Desktop\IE Projects\demos\Retov1\Servicio\bin\Debug\net6.0\Comun.pdb
+C:\Users\Administrador\Desktop\IE Projects\demos\Retov1\Servicio\bin\Debug\net6.0\Controlador.pdb
+C:\Users\Administrador\Desktop\IE Projects\demos\Retov1\Servicio\bin\Debug\net6.0\Modelo.pdb
+C:\Users\Administrador\Desktop\IE Projects\demos\Retov1\Servicio\obj\Debug\net6.0\Servicio.csproj.AssemblyReference.cache
+C:\Users\Administrador\Desktop\IE Projects\demos\Retov1\Servicio\obj\Debug\net6.0\Servicio.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Administrador\Desktop\IE Projects\demos\Retov1\Servicio\obj\Debug\net6.0\Servicio.AssemblyInfoInputs.cache
+C:\Users\Administrador\Desktop\IE Projects\demos\Retov1\Servicio\obj\Debug\net6.0\Servicio.AssemblyInfo.cs
+C:\Users\Administrador\Desktop\IE Projects\demos\Retov1\Servicio\obj\Debug\net6.0\Servicio.csproj.CoreCompileInputs.cache
+C:\Users\Administrador\Desktop\IE Projects\demos\Retov1\Servicio\obj\Debug\net6.0\Servicio.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Administrador\Desktop\IE Projects\demos\Retov1\Servicio\obj\Debug\net6.0\Servicio.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Administrador\Desktop\IE Projects\demos\Retov1\Servicio\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\Administrador\Desktop\IE Projects\demos\Retov1\Servicio\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\Administrador\Desktop\IE Projects\demos\Retov1\Servicio\obj\Debug\net6.0\scopedcss\bundle\Servicio.styles.css
+C:\Users\Administrador\Desktop\IE Projects\demos\Retov1\Servicio\obj\Debug\net6.0\Servicio.csproj.CopyComplete
+C:\Users\Administrador\Desktop\IE Projects\demos\Retov1\Servicio\obj\Debug\net6.0\Servicio.dll
+C:\Users\Administrador\Desktop\IE Projects\demos\Retov1\Servicio\obj\Debug\net6.0\refint\Servicio.dll
+C:\Users\Administrador\Desktop\IE Projects\demos\Retov1\Servicio\obj\Debug\net6.0\Servicio.pdb
+C:\Users\Administrador\Desktop\IE Projects\demos\Retov1\Servicio\obj\Debug\net6.0\Servicio.genruntimeconfig.cache
+C:\Users\Administrador\Desktop\IE Projects\demos\Retov1\Servicio\obj\Debug\net6.0\ref\Servicio.dll

@@ -1,0 +1,24 @@
+C:\ie\proyectos\demos\Retov1\Comun\bin\Debug\net6.0\Comun.deps.json
+C:\ie\proyectos\demos\Retov1\Comun\bin\Debug\net6.0\Comun.dll
+C:\ie\proyectos\demos\Retov1\Comun\bin\Debug\net6.0\Comun.pdb
+C:\ie\proyectos\demos\Retov1\Comun\obj\Debug\net6.0\Comun.csproj.AssemblyReference.cache
+C:\ie\proyectos\demos\Retov1\Comun\obj\Debug\net6.0\Comun.GeneratedMSBuildEditorConfig.editorconfig
+C:\ie\proyectos\demos\Retov1\Comun\obj\Debug\net6.0\Comun.AssemblyInfoInputs.cache
+C:\ie\proyectos\demos\Retov1\Comun\obj\Debug\net6.0\Comun.AssemblyInfo.cs
+C:\ie\proyectos\demos\Retov1\Comun\obj\Debug\net6.0\Comun.csproj.CoreCompileInputs.cache
+C:\ie\proyectos\demos\Retov1\Comun\obj\Debug\net6.0\Comun.dll
+C:\ie\proyectos\demos\Retov1\Comun\obj\Debug\net6.0\refint\Comun.dll
+C:\ie\proyectos\demos\Retov1\Comun\obj\Debug\net6.0\Comun.pdb
+C:\ie\proyectos\demos\Retov1\Comun\obj\Debug\net6.0\ref\Comun.dll
+C:\Users\Administrador\Desktop\IE Projects\demos\Retov1\Comun\bin\Debug\net6.0\Comun.deps.json
+C:\Users\Administrador\Desktop\IE Projects\demos\Retov1\Comun\bin\Debug\net6.0\Comun.dll
+C:\Users\Administrador\Desktop\IE Projects\demos\Retov1\Comun\bin\Debug\net6.0\Comun.pdb
+C:\Users\Administrador\Desktop\IE Projects\demos\Retov1\Comun\obj\Debug\net6.0\Comun.csproj.AssemblyReference.cache
+C:\Users\Administrador\Desktop\IE Projects\demos\Retov1\Comun\obj\Debug\net6.0\Comun.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Administrador\Desktop\IE Projects\demos\Retov1\Comun\obj\Debug\net6.0\Comun.AssemblyInfoInputs.cache
+C:\Users\Administrador\Desktop\IE Projects\demos\Retov1\Comun\obj\Debug\net6.0\Comun.AssemblyInfo.cs
+C:\Users\Administrador\Desktop\IE Projects\demos\Retov1\Comun\obj\Debug\net6.0\Comun.csproj.CoreCompileInputs.cache
+C:\Users\Administrador\Desktop\IE Projects\demos\Retov1\Comun\obj\Debug\net6.0\Comun.dll
+C:\Users\Administrador\Desktop\IE Projects\demos\Retov1\Comun\obj\Debug\net6.0\refint\Comun.dll
+C:\Users\Administrador\Desktop\IE Projects\demos\Retov1\Comun\obj\Debug\net6.0\Comun.pdb
+C:\Users\Administrador\Desktop\IE Projects\demos\Retov1\Comun\obj\Debug\net6.0\ref\Comun.dll
