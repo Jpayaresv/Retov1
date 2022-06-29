@@ -12,6 +12,14 @@ namespace Modelo
 {
     public class UsuariosMdl : Conexion, IGenericoModelo<Usuarios, int>
     {
+        public bool Crear(Usuarios input)
+        {
+            sQuery = "INSERT INTO public.usuarios(username, password, ultimologin, nombre, estado, fechacreacion, fechamodificacion)" +
+	                 "VALUES (@username, @password,@ultimologin, @nombre, @estado, @fechacreacion, @fechamodificacion)";
+                        
+            return ObjConn.Execute(sQuery, input) > 0;
+        }
+
         public bool Actualizar(Usuarios input)
         {
             sQuery = "UPDATE usuarios SET " +
@@ -27,11 +35,11 @@ namespace Modelo
             return ObjConn.Execute(sQuery, input) > 0;
         }
 
-        public bool Crear(Usuarios input)
+        public bool Eliminar(Usuarios input)
         {
-            sQuery = "INSERT INTO public.usuarios(username, password, ultimologin, nombre, estado, fechacreacion, fechamodificacion)" +
-	                 "VALUES (@username, @password,@ultimologin, @nombre, @estado, @fechacreacion, @fechamodificacion)";
-                        
+            sQuery = "DELETE FROM usuarios "+
+             "WHERE username = @username";       
+
             return ObjConn.Execute(sQuery, input) > 0;
         }
 

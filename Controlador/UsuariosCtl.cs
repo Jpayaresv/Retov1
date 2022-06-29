@@ -19,6 +19,27 @@ namespace Controlador
             _configuration = configuration;
         }
 
+        public RespuestaDto Crear(Usuarios obj)
+        {
+
+            var response = new RespuestaDto();
+            using var Context = new Modelo.Proveedor.Conexion(_configuration["ConnectionStrings:defaultConnection"], _configuration["ConnectionStrings:providerName"]).GetOpenConnection();
+            var _modelo = new UsuariosMdl() { ObjConn = Context };
+            var existeObjeto = _modelo.ExistenRegistros("usuarios", "username", "username = '" + obj.Username + "'");
+            if (existeObjeto)
+            {
+                response.AgregarInformacion(Informaciones._223);
+            }
+            else
+            {
+                if (_modelo.Crear(obj))
+                    response.AgregarCompletado(Completados._101);
+                else
+                    response.AgregarInformacion(Informaciones._210);
+            }
+            return response;
+        }
+
         public RespuestaDto Actualizar(Usuarios obj)
         {
             var response = new RespuestaDto();
@@ -39,23 +60,22 @@ namespace Controlador
             return response;
         }
 
-        public RespuestaDto Crear(Usuarios obj)
+        public RespuestaDto Eliminar(Usuarios obj)
         {
-
             var response = new RespuestaDto();
             using var Context = new Modelo.Proveedor.Conexion(_configuration["ConnectionStrings:defaultConnection"], _configuration["ConnectionStrings:providerName"]).GetOpenConnection();
             var _modelo = new UsuariosMdl() { ObjConn = Context };
             var existeObjeto = _modelo.ExistenRegistros("usuarios", "username", "username = '" + obj.Username + "'");
-            if (existeObjeto)
+            if (!existeObjeto)
             {
-                response.AgregarInformacion(Informaciones._223);
+                response.AgregarInformacion(Informaciones._226);
             }
             else
             {
-                if (_modelo.Crear(obj))
-                    response.AgregarCompletado(Completados._101);
+                if (_modelo.Eliminar(obj))
+                    response.AgregarCompletado(Completados._104);
                 else
-                    response.AgregarInformacion(Informaciones._210);
+                    response.AgregarInformacion(Informaciones._225);
             }
             return response;
         }

@@ -81,6 +81,7 @@ namespace Comun
         /// Registros procesados Correctamente
         /// </summary>
         public static RespuestaDto _103 { get { return new RespuestaDto("103", "Registros procesados Correctamente", TipoMensajeRespuesta.success); } }
+        public static RespuestaDto _104 { get { return new RespuestaDto("104", "Registro eliminado Correctamente", TipoMensajeRespuesta.success); } }
 
     }
 
@@ -147,7 +148,8 @@ namespace Comun
         /// Ya existe una categoria MOTO definida para la estacion
         /// </summary>
         public static RespuestaDto _224 { get { return new RespuestaDto("224", "Ya existe una categoria MOTO definida para la estacion", TipoMensajeRespuesta.info); } }
-
+        public static RespuestaDto _225 { get { return new RespuestaDto("225", "No fue posible eliminar el registro", TipoMensajeRespuesta.info); } }
+        public static RespuestaDto _226 { get { return new RespuestaDto("226", "No existe información para eliminar", TipoMensajeRespuesta.info); } }
 
     }
 

@@ -83,6 +83,27 @@ namespace Servicio.Controllers
             return Ok();
         }
 
+        [HttpDelete("Eliminar")]
+        public IActionResult EliminarUsuario(Usuarios usuarios)
+        {
+            RespuestaDto respuesta;
+            try
+            {
+                // valido la información
+                respuesta = _usuariosCtl.Eliminar(usuarios);
+                return Ok(respuesta);
+
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("{@Exception}", ex);
+                respuesta = new RespuestaDto("499", "Error Interno: " + ex.Message, TipoMensajeRespuesta.error);
+                return StatusCode(StatusCodes.Status500InternalServerError, respuesta);
+            }
+
+            return Ok();
+        }
+
         
 
         
