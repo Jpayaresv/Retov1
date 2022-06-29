@@ -150,6 +150,7 @@ namespace Comun
         public static RespuestaDto _224 { get { return new RespuestaDto("224", "Ya existe una categoria MOTO definida para la estacion", TipoMensajeRespuesta.info); } }
         public static RespuestaDto _225 { get { return new RespuestaDto("225", "No fue posible eliminar el registro", TipoMensajeRespuesta.info); } }
         public static RespuestaDto _226 { get { return new RespuestaDto("226", "No existe información para eliminar", TipoMensajeRespuesta.info); } }
+        public static RespuestaDto _227 { get { return new RespuestaDto("227", "Datos referenciados no existen", TipoMensajeRespuesta.info); } }
 
     }
 
