@@ -88,9 +88,7 @@ namespace Controlador
             if(parameters.Username!="") {
                 condicion = " and username='" + parameters.Username + "'";
             }
-            if(parameters.Nombre!="") { 
-                condicion = " and nombre='" + parameters.Nombre + "'";
-            }
+
             return _modelo.ObtenerTodos(condicion, string.Empty, null);
         }
 
