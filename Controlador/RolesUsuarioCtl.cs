@@ -25,10 +25,15 @@ namespace Controlador
             var response = new RespuestaDto();
             using var Context = new Modelo.Proveedor.Conexion(_configuration["ConnectionStrings:defaultConnection"], _configuration["ConnectionStrings:providerName"]).GetOpenConnection();
             var _modelo = new RolesUsuarioMdl() { ObjConn = Context };
-            var existeObjeto = _modelo.ExistenRegistros("usuarios", "username", "username = '" + obj.Username + "'");
-            var existeObjeto1 = _modelo.ExistenRegistros("roles", "id", "id = '" + obj.IdRol + "'");
-
-            if (!existeObjeto || !existeObjeto1)
+            var existeObjeto = _modelo.ExistenRegistros("rolesusuario", "username", "username = '" + obj.Username + "'");
+            var existeObjeto1 = _modelo.ExistenRegistros("rolesusuario", "idrol", "idrol = '" + obj.IdRol + "'");
+            var existeObjeto2 = _modelo.ExistenRegistros("usuarios", "username", "username = '" + obj.Username + "'");
+            var existeObjeto3 = _modelo.ExistenRegistros("roles", "id", "id = '" + obj.IdRol + "'");
+            
+           if(existeObjeto || existeObjeto1){
+                response.AgregarInformacion(Informaciones._223);
+            }
+            else if (!existeObjeto2 || !existeObjeto3)
             {
                 response.AgregarInformacion(Informaciones._227);
             }
@@ -47,10 +52,15 @@ namespace Controlador
             var response = new RespuestaDto();
             using var Context = new Modelo.Proveedor.Conexion(_configuration["ConnectionStrings:defaultConnection"], _configuration["ConnectionStrings:providerName"]).GetOpenConnection();
             var _modelo = new RolesUsuarioMdl() { ObjConn = Context };
-            var existeObjeto = _modelo.ExistenRegistros("usuarios", "username", "username = '" + obj.Username + "'");
-            var existeObjeto1 = _modelo.ExistenRegistros("roles", "id", "id = '" + obj.IdRol + "'");
-
-            if (!existeObjeto || !existeObjeto1)
+            var existeObjeto = _modelo.ExistenRegistros("rolesusuario", "username", "username = '" + obj.Username + "'");
+            var existeObjeto1 = _modelo.ExistenRegistros("rolesusuario", "idrol", "idrol = '" + obj.IdRol + "'");
+            var existeObjeto2 = _modelo.ExistenRegistros("usuarios", "username", "username = '" + obj.Username + "'");
+            var existeObjeto3 = _modelo.ExistenRegistros("roles", "id", "id = '" + obj.IdRol + "'");
+            
+           if(!existeObjeto || !existeObjeto1){
+                response.AgregarInformacion(Informaciones._202);
+            }
+            else if (!existeObjeto2 || !existeObjeto3)
             {
                 response.AgregarInformacion(Informaciones._227);
             }
@@ -69,9 +79,9 @@ namespace Controlador
             var response = new RespuestaDto();
             using var Context = new Modelo.Proveedor.Conexion(_configuration["ConnectionStrings:defaultConnection"], _configuration["ConnectionStrings:providerName"]).GetOpenConnection();
             var _modelo = new RolesUsuarioMdl() { ObjConn = Context };
-            var existeObjeto = _modelo.ExistenRegistros("usuarios", "username", "username = '" + obj.Username + "'");
-            var existeObjeto1 = _modelo.ExistenRegistros("roles", "id", "id = '" + obj.IdRol + "'");
-            if (!existeObjeto)
+            var existeObjeto = _modelo.ExistenRegistros("rolesusuario", "username", "username = '" + obj.Username + "'");
+            var existeObjeto1 = _modelo.ExistenRegistros("rolesusuario", "idrol", "idrol = '" + obj.IdRol + "'");
+            if (!existeObjeto || !existeObjeto1)
             {
                 response.AgregarInformacion(Informaciones._226);
             }
@@ -90,8 +100,8 @@ namespace Controlador
             using var Context = new Modelo.Proveedor.Conexion(_configuration["ConnectionStrings:defaultConnection"], _configuration["ConnectionStrings:providerName"]).GetOpenConnection();
             var _modelo = new RolesUsuarioMdl() { ObjConn = Context };
             var condicion = "";
-            if(parameters.Username!= null ) {
-                condicion = " and Username='" + parameters.Username + "'";
+            if(parameters.Username!= null && parameters.IdRol!=null) {
+                condicion = " and Username='" + parameters.Username + "'" + " and idrol= '" + parameters.IdRol + "'";
             }
 
             return _modelo.ObtenerTodos(condicion, string.Empty, null);

@@ -53,7 +53,7 @@ namespace Modelo
 
         public bool Eliminar(Inventario input)
         {
-            sQuery = "DELETE FROM public.categorias "+
+            sQuery = "DELETE FROM public.inventario "+
              "WHERE idarticulo = @idarticulo and idbodega = @idbodega";       
 
             return ObjConn.Execute(sQuery, input) > 0;

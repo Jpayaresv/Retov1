@@ -32,17 +32,14 @@ namespace Controlador
             if(existeObjeto1)
             {
                 response.AgregarInformacion(Informaciones._223);
-            } 
-            if(existeCodigo)
-            {
-                response.AgregarInformacion(Informaciones._228);
-            } 
-            if (!existeObjeto)
+            } else if (!existeObjeto)
             {
                 response.AgregarInformacion(Informaciones._227);
-            }
-            else
+            }else if(existeCodigo)
             {
+                response.AgregarInformacion(Informaciones._228);
+            } else{
+
                 if (_modelo.Crear(obj))
                     response.AgregarCompletado(Completados._101);
                 else
@@ -60,15 +57,15 @@ namespace Controlador
             var existeObjeto = _modelo.ExistenRegistros("categorias", "id", "id = '" + obj.IdCategoria + "'");
             var existeCodigo = _modelo.ExistenRegistros("articulos", "codigo", "codigo = '" + obj.Codigo + "'");
                       
-            /* if (existeObjeto1)
+            if (!existeObjeto1)
             {
                 response.AgregarInformacion(Informaciones._202);
-            }else if(existeCodigo)
+            } else if (!existeObjeto)
+            {
+                response.AgregarInformacion(Informaciones._227);
+            }  else if(existeCodigo)
             {
                 response.AgregarInformacion(Informaciones._228);
-            }else */ if (!existeObjeto)
-            {
-                response.AgregarInformacion(Informaciones._202);
             }
             else
             {

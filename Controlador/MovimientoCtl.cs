@@ -29,12 +29,15 @@ namespace Controlador
             var existeObjeto2 = _modelo.ExistenRegistros("articulos", "id", "id = '" + obj.IdArticulo + "'");
             var existeObjeto3 = _modelo.ExistenRegistros("bodegas", "id", "id = '" + obj.IdBodega + "'");
 
-            
-            if (!existeObjeto || !existeObjeto1 || !existeObjeto2 || !existeObjeto3)
-            {
-                response.AgregarInformacion(Informaciones._202);
-            }
-            else
+            if (!existeObjeto){
+              response.AgregarInformacion(Informaciones._202);
+            }else if(!existeObjeto1){
+                response.AgregarInformacion(Informaciones._227);
+            }else if(!existeObjeto2){
+                response.AgregarInformacion(Informaciones._227);
+            }else if(!existeObjeto3){ 
+                response.AgregarInformacion(Informaciones._227);   
+            }else
             {
                 if (_modelo.Actualizar(obj))
                     response.AgregarCompletado(Completados._102);
@@ -54,12 +57,15 @@ namespace Controlador
             var existeObjeto2 = _modelo.ExistenRegistros("articulos", "id", "id = '" + obj.IdArticulo + "'");
             var existeObjeto3 = _modelo.ExistenRegistros("bodegas", "id", "id = '" + obj.IdBodega + "'");
 
-            
-            if (existeObjeto || !existeObjeto1 || !existeObjeto2 || !existeObjeto3)
-            {
+            if (existeObjeto){
+              response.AgregarInformacion(Informaciones._223);
+            }else if(!existeObjeto1){
                 response.AgregarInformacion(Informaciones._227);
-            }
-            else
+            }else if(!existeObjeto2){
+                response.AgregarInformacion(Informaciones._227);
+            }else if(!existeObjeto3){ 
+                response.AgregarInformacion(Informaciones._227);   
+            }else
             {
                 if (_modelo.Crear(obj))
                     response.AgregarCompletado(Completados._101);
@@ -74,7 +80,7 @@ namespace Controlador
             var response = new RespuestaDto();
             using var Context = new Modelo.Proveedor.Conexion(_configuration["ConnectionStrings:defaultConnection"], _configuration["ConnectionStrings:providerName"]).GetOpenConnection();
             var _modelo = new MovimientoMdl() { ObjConn = Context };
-            var existeObjeto = _modelo.ExistenRegistros("tipomovimiento", "id", "id = '" + obj.Id + "'");
+            var existeObjeto = _modelo.ExistenRegistros("movimiento", "id", "id = '" + obj.Id + "'");
             if (!existeObjeto)
             {
                 response.AgregarInformacion(Informaciones._226);

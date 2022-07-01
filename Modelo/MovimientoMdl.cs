@@ -15,7 +15,7 @@ namespace Modelo
                      "observaciones = @observaciones,"+
                      "idarticulo = @idarticulo,"+
                      "idbodega = @idbodega,"+
-                     "cantidad = @cantidad"+
+                     "cantidad = @cantidad "+
                      "WHERE id = @id";
 
             return ObjConn.Execute(sQuery, input) > 0;

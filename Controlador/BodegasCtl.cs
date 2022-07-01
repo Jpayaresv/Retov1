@@ -25,10 +25,13 @@ namespace Controlador
             using var Context = new Modelo.Proveedor.Conexion(_configuration["ConnectionStrings:defaultConnection"], _configuration["ConnectionStrings:providerName"]).GetOpenConnection();
             var _modelo = new BodegasMdl() { ObjConn = Context };
             var existeObjeto = _modelo.ExistenRegistros("bodegas", "id", "id = '" + obj.Id + "'");
+            var existeCodigo = _modelo.ExistenRegistros("bodegas", "codigo", "codigo = '" + obj.Codigo + "'");
             
             if (!existeObjeto)
             {
                 response.AgregarInformacion(Informaciones._202);
+            }else if(existeCodigo) {
+                response.AgregarInformacion(Informaciones._229);
             }
             else
             {
@@ -46,13 +49,14 @@ namespace Controlador
             using var Context = new Modelo.Proveedor.Conexion(_configuration["ConnectionStrings:defaultConnection"], _configuration["ConnectionStrings:providerName"]).GetOpenConnection();
             var _modelo = new BodegasMdl() { ObjConn = Context };
             var existeObjeto = _modelo.ExistenRegistros("bodegas", "id", "id = '" + obj.Id + "'");
+            var existeCodigo = _modelo.ExistenRegistros("bodegas", "codigo", "codigo = '" + obj.Codigo + "'");
             
             if (existeObjeto)
             {
                 response.AgregarInformacion(Informaciones._223);
-            }
-            else
-            {
+            }else if(existeCodigo) {
+                response.AgregarInformacion(Informaciones._229);
+            }else{
                 if (_modelo.Crear(obj))
                     response.AgregarCompletado(Completados._101);
                 else
@@ -67,6 +71,7 @@ namespace Controlador
             using var Context = new Modelo.Proveedor.Conexion(_configuration["ConnectionStrings:defaultConnection"], _configuration["ConnectionStrings:providerName"]).GetOpenConnection();
             var _modelo = new BodegasMdl() { ObjConn = Context };
             var existeObjeto = _modelo.ExistenRegistros("bodegas", "id", "id = '" + obj.Id + "'");
+            
             if (!existeObjeto)
             {
                 response.AgregarInformacion(Informaciones._226);

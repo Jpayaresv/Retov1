@@ -25,13 +25,14 @@ namespace Controlador
             using var Context = new Modelo.Proveedor.Conexion(_configuration["ConnectionStrings:defaultConnection"], _configuration["ConnectionStrings:providerName"]).GetOpenConnection();
             var _modelo = new TipoMovimientoMdl() { ObjConn = Context };
             var existeObjeto = _modelo.ExistenRegistros("tipomovimiento", "id", "id = '" + obj.Id + "'");
+            var existeCodigo = _modelo.ExistenRegistros("tipomovimiento", "codigo", "codigo = '" + obj.Codigo + "'");
             
-            if (!existeObjeto)
+            if (existeObjeto)
             {
-                response.AgregarInformacion(Informaciones._223);
-            }
-            else
-            {
+                response.AgregarInformacion(Informaciones._202);
+            }else if(existeCodigo) {
+                response.AgregarInformacion(Informaciones._230);
+            }else{
                 if (_modelo.Actualizar(obj))
                     response.AgregarCompletado(Completados._102);
                 else
@@ -46,13 +47,14 @@ namespace Controlador
             using var Context = new Modelo.Proveedor.Conexion(_configuration["ConnectionStrings:defaultConnection"], _configuration["ConnectionStrings:providerName"]).GetOpenConnection();
             var _modelo = new TipoMovimientoMdl() { ObjConn = Context };
             var existeObjeto = _modelo.ExistenRegistros("tipomovimiento", "id", "id = '" + obj.Id + "'");
+            var existeCodigo = _modelo.ExistenRegistros("tipomovimiento", "codigo", "codigo = '" + obj.Codigo + "'");
             
             if (existeObjeto)
             {
                 response.AgregarInformacion(Informaciones._223);
-            }
-            else
-            {
+            }else if(existeCodigo) {
+                response.AgregarInformacion(Informaciones._230);
+            }else{
                 if (_modelo.Crear(obj))
                     response.AgregarCompletado(Completados._101);
                 else
