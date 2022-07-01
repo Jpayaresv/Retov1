@@ -9,21 +9,21 @@ namespace Servicio.Controllers
     [Route("api/[controller]")]
     [ApiController]
     [Authorize]
-    public class TipoMovimientoController : ControllerBase
+    public class BodegasController : ControllerBase
     {
         private readonly IConfiguration _configuration;
-        private readonly ILogger<TipoMovimientoController> _logger;
-        private readonly TipoMovimientoCtl _tipomovimientoCtl;
-        public TipoMovimientoController(IConfiguration configuration, ILogger<TipoMovimientoController> logger)
+        private readonly ILogger<BodegasController> _logger;
+        private readonly BodegasCtl _bodegasCtl;
+        public BodegasController(IConfiguration configuration, ILogger<BodegasController> logger)
         {
             _configuration = configuration;
             _logger = logger;
-            _tipomovimientoCtl = new TipoMovimientoCtl(_configuration);
+            _bodegasCtl = new BodegasCtl(_configuration);
 
         }
 
         [HttpGet("Get")]
-        public IActionResult Get(TipoMovimiento tipomovimiento) {
+        public IActionResult Get(Bodegas bodegas) {
 /*             RespuestaDto respuesta;
             try
             {
@@ -37,18 +37,18 @@ namespace Servicio.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, respuesta);
             } */
 
-            return Ok(_tipomovimientoCtl.ObtenerTodos(tipomovimiento));
+            return Ok(_bodegasCtl.ObtenerTodos(bodegas));
             
         } 
 
         [HttpPost("Crear")]
-        public IActionResult CrearTipoMovimiento(TipoMovimiento tipomovimiento)
+        public IActionResult CrearBodega(Bodegas bodegas)
         {
             RespuestaDto respuesta;
             try
             {
                 // valido la información
-                respuesta = _tipomovimientoCtl.Crear(tipomovimiento);
+                respuesta = _bodegasCtl.Crear(bodegas);
                 return Ok(respuesta);
 
             }
@@ -63,13 +63,13 @@ namespace Servicio.Controllers
         }
 
         [HttpPost("Actualizar")]
-        public IActionResult ActualizarTipoMovimiento(TipoMovimiento tipomovimiento)
+        public IActionResult ActualizarBodega(Bodegas bodegas)
         {
             RespuestaDto respuesta;
             try
             {
                 // valido la información
-                respuesta = _tipomovimientoCtl.Actualizar(tipomovimiento);
+                respuesta = _bodegasCtl.Actualizar(bodegas);
                 return Ok(respuesta);
 
             }
@@ -84,13 +84,13 @@ namespace Servicio.Controllers
         }
 
         [HttpDelete("Eliminar")]
-        public IActionResult EliminarTipoMovimiento(TipoMovimiento tipomovimiento)
+        public IActionResult EliminarBodega(Bodegas bodegas)
         {
             RespuestaDto respuesta;
             try
             {
                 // valido la información
-                respuesta = _tipomovimientoCtl.Eliminar(tipomovimiento);
+                respuesta = _bodegasCtl.Eliminar(bodegas);
                 return Ok(respuesta);
 
             }
@@ -103,6 +103,9 @@ namespace Servicio.Controllers
 
             return Ok();
         }
+
+        
+
         
     }
 }

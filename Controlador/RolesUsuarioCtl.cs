@@ -1,4 +1,4 @@
-﻿using Comun;
+using Comun;
 using Controlador.Interfaces;
 using Microsoft.Extensions.Configuration;
 using Modelo;
@@ -10,25 +10,27 @@ using System.Threading.Tasks;
 
 namespace Controlador
 {
-    public class UsuariosCtl : ClaseBase, IGenericoControlador<Usuarios>
+    public class RolesUsuarioCtl : ClaseBase, IGenericoControlador<RolesUsuario>
     {
         private readonly IConfiguration _configuration;
 
-        public UsuariosCtl(IConfiguration configuration) : base(configuration)
+        public  RolesUsuarioCtl(IConfiguration configuration) : base(configuration)
         {
             _configuration = configuration;
         }
 
-        public RespuestaDto Crear(Usuarios obj)
+        public RespuestaDto Crear(RolesUsuario obj)
         {
 
             var response = new RespuestaDto();
             using var Context = new Modelo.Proveedor.Conexion(_configuration["ConnectionStrings:defaultConnection"], _configuration["ConnectionStrings:providerName"]).GetOpenConnection();
-            var _modelo = new UsuariosMdl() { ObjConn = Context };
+            var _modelo = new RolesUsuarioMdl() { ObjConn = Context };
             var existeObjeto = _modelo.ExistenRegistros("usuarios", "username", "username = '" + obj.Username + "'");
-            if (existeObjeto)
+            var existeObjeto1 = _modelo.ExistenRegistros("roles", "id", "id = '" + obj.IdRol + "'");
+
+            if (!existeObjeto || !existeObjeto1)
             {
-                response.AgregarInformacion(Informaciones._223);
+                response.AgregarInformacion(Informaciones._227);
             }
             else
             {
@@ -40,15 +42,17 @@ namespace Controlador
             return response;
         }
 
-        public RespuestaDto Actualizar(Usuarios obj)
+        public RespuestaDto Actualizar(RolesUsuario obj)
         {
             var response = new RespuestaDto();
             using var Context = new Modelo.Proveedor.Conexion(_configuration["ConnectionStrings:defaultConnection"], _configuration["ConnectionStrings:providerName"]).GetOpenConnection();
-            var _modelo = new UsuariosMdl() { ObjConn = Context };
+            var _modelo = new RolesUsuarioMdl() { ObjConn = Context };
             var existeObjeto = _modelo.ExistenRegistros("usuarios", "username", "username = '" + obj.Username + "'");
-            if (!existeObjeto)
+            var existeObjeto1 = _modelo.ExistenRegistros("roles", "id", "id = '" + obj.IdRol + "'");
+
+            if (!existeObjeto || !existeObjeto1)
             {
-                response.AgregarInformacion(Informaciones._202);
+                response.AgregarInformacion(Informaciones._227);
             }
             else
             {
@@ -60,12 +64,13 @@ namespace Controlador
             return response;
         }
 
-        public RespuestaDto Eliminar(Usuarios obj)
+        public RespuestaDto Eliminar(RolesUsuario obj)
         {
             var response = new RespuestaDto();
             using var Context = new Modelo.Proveedor.Conexion(_configuration["ConnectionStrings:defaultConnection"], _configuration["ConnectionStrings:providerName"]).GetOpenConnection();
-            var _modelo = new UsuariosMdl() { ObjConn = Context };
+            var _modelo = new RolesUsuarioMdl() { ObjConn = Context };
             var existeObjeto = _modelo.ExistenRegistros("usuarios", "username", "username = '" + obj.Username + "'");
+            var existeObjeto1 = _modelo.ExistenRegistros("roles", "id", "id = '" + obj.IdRol + "'");
             if (!existeObjeto)
             {
                 response.AgregarInformacion(Informaciones._226);
@@ -80,22 +85,22 @@ namespace Controlador
             return response;
         }
 
-        public IEnumerable<Usuarios> ObtenerTodos(Usuarios parameters)
+        public IEnumerable<RolesUsuario> ObtenerTodos(RolesUsuario parameters)
         {
             using var Context = new Modelo.Proveedor.Conexion(_configuration["ConnectionStrings:defaultConnection"], _configuration["ConnectionStrings:providerName"]).GetOpenConnection();
-            var _modelo = new UsuariosMdl() { ObjConn = Context };
+            var _modelo = new RolesUsuarioMdl() { ObjConn = Context };
             var condicion = "";
-            if(parameters.Username != null) {
-                condicion = " and username='" + parameters.Username + "'";
+            if(parameters.Username!= null ) {
+                condicion = " and Username='" + parameters.Username + "'";
             }
 
             return _modelo.ObtenerTodos(condicion, string.Empty, null);
         }
 
-        public Usuarios ObtenerUnicoPorLlave(Usuarios parameter)
+        public RolesUsuario ObtenerUnicoPorLlave(RolesUsuario parameter)
         {
             using var Context = new Modelo.Proveedor.Conexion(_configuration["ConnectionStrings:defaultConnection"], _configuration["ConnectionStrings:providerName"]).GetOpenConnection();
-            var _modelo = new UsuariosMdl() { ObjConn = Context };
+            var _modelo = new RolesUsuarioMdl() { ObjConn = Context };
             return _modelo.ObtenerUnicoPorLlave(parameter);
         }
     }

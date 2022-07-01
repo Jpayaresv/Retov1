@@ -1,4 +1,4 @@
-﻿using Comun;
+using Comun;
 using Controlador.Interfaces;
 using Microsoft.Extensions.Configuration;
 using Modelo;
@@ -10,42 +10,22 @@ using System.Threading.Tasks;
 
 namespace Controlador
 {
-    public class UsuariosCtl : ClaseBase, IGenericoControlador<Usuarios>
+    public class BodegasCtl : ClaseBase, IGenericoControlador<Bodegas>
     {
         private readonly IConfiguration _configuration;
 
-        public UsuariosCtl(IConfiguration configuration) : base(configuration)
+        public  BodegasCtl(IConfiguration configuration) : base(configuration)
         {
             _configuration = configuration;
         }
 
-        public RespuestaDto Crear(Usuarios obj)
-        {
-
-            var response = new RespuestaDto();
-            using var Context = new Modelo.Proveedor.Conexion(_configuration["ConnectionStrings:defaultConnection"], _configuration["ConnectionStrings:providerName"]).GetOpenConnection();
-            var _modelo = new UsuariosMdl() { ObjConn = Context };
-            var existeObjeto = _modelo.ExistenRegistros("usuarios", "username", "username = '" + obj.Username + "'");
-            if (existeObjeto)
-            {
-                response.AgregarInformacion(Informaciones._223);
-            }
-            else
-            {
-                if (_modelo.Crear(obj))
-                    response.AgregarCompletado(Completados._101);
-                else
-                    response.AgregarInformacion(Informaciones._210);
-            }
-            return response;
-        }
-
-        public RespuestaDto Actualizar(Usuarios obj)
+        public RespuestaDto Actualizar(Bodegas obj)
         {
             var response = new RespuestaDto();
             using var Context = new Modelo.Proveedor.Conexion(_configuration["ConnectionStrings:defaultConnection"], _configuration["ConnectionStrings:providerName"]).GetOpenConnection();
-            var _modelo = new UsuariosMdl() { ObjConn = Context };
-            var existeObjeto = _modelo.ExistenRegistros("usuarios", "username", "username = '" + obj.Username + "'");
+            var _modelo = new BodegasMdl() { ObjConn = Context };
+            var existeObjeto = _modelo.ExistenRegistros("bodegas", "id", "id = '" + obj.Id + "'");
+            
             if (!existeObjeto)
             {
                 response.AgregarInformacion(Informaciones._202);
@@ -60,12 +40,33 @@ namespace Controlador
             return response;
         }
 
-        public RespuestaDto Eliminar(Usuarios obj)
+        public RespuestaDto Crear(Bodegas obj)
         {
             var response = new RespuestaDto();
             using var Context = new Modelo.Proveedor.Conexion(_configuration["ConnectionStrings:defaultConnection"], _configuration["ConnectionStrings:providerName"]).GetOpenConnection();
-            var _modelo = new UsuariosMdl() { ObjConn = Context };
-            var existeObjeto = _modelo.ExistenRegistros("usuarios", "username", "username = '" + obj.Username + "'");
+            var _modelo = new BodegasMdl() { ObjConn = Context };
+            var existeObjeto = _modelo.ExistenRegistros("bodegas", "id", "id = '" + obj.Id + "'");
+            
+            if (existeObjeto)
+            {
+                response.AgregarInformacion(Informaciones._223);
+            }
+            else
+            {
+                if (_modelo.Crear(obj))
+                    response.AgregarCompletado(Completados._101);
+                else
+                    response.AgregarInformacion(Informaciones._210);
+            }
+            return response;
+        }
+
+        public RespuestaDto Eliminar(Bodegas obj)
+        {
+            var response = new RespuestaDto();
+            using var Context = new Modelo.Proveedor.Conexion(_configuration["ConnectionStrings:defaultConnection"], _configuration["ConnectionStrings:providerName"]).GetOpenConnection();
+            var _modelo = new BodegasMdl() { ObjConn = Context };
+            var existeObjeto = _modelo.ExistenRegistros("bodegas", "id", "id = '" + obj.Id + "'");
             if (!existeObjeto)
             {
                 response.AgregarInformacion(Informaciones._226);
@@ -80,23 +81,23 @@ namespace Controlador
             return response;
         }
 
-        public IEnumerable<Usuarios> ObtenerTodos(Usuarios parameters)
+        public IEnumerable<Bodegas> ObtenerTodos(Bodegas parameters)
         {
             using var Context = new Modelo.Proveedor.Conexion(_configuration["ConnectionStrings:defaultConnection"], _configuration["ConnectionStrings:providerName"]).GetOpenConnection();
-            var _modelo = new UsuariosMdl() { ObjConn = Context };
+            var _modelo = new BodegasMdl() { ObjConn = Context };
             var condicion = "";
-            if(parameters.Username != null) {
-                condicion = " and username='" + parameters.Username + "'";
+            if(parameters.Id!= null ) {
+                condicion = " and id='" + parameters.Id + "'";
             }
 
             return _modelo.ObtenerTodos(condicion, string.Empty, null);
         }
 
-        public Usuarios ObtenerUnicoPorLlave(Usuarios parameter)
+        public Bodegas ObtenerUnicoPorLlave(Bodegas parameter)
         {
             using var Context = new Modelo.Proveedor.Conexion(_configuration["ConnectionStrings:defaultConnection"], _configuration["ConnectionStrings:providerName"]).GetOpenConnection();
-            var _modelo = new UsuariosMdl() { ObjConn = Context };
+            var _modelo = new BodegasMdl() { ObjConn = Context };
             return _modelo.ObtenerUnicoPorLlave(parameter);
         }
     }
-}
+}     

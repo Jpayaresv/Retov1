@@ -26,6 +26,17 @@ namespace Controlador
             using var Context = new Modelo.Proveedor.Conexion(_configuration["ConnectionStrings:defaultConnection"], _configuration["ConnectionStrings:providerName"]).GetOpenConnection();
             var _modelo = new ArticulosMdl() { ObjConn = Context };
             var existeObjeto = _modelo.ExistenRegistros("categorias", "id", "id = '" + obj.IdCategoria + "'");
+            var existeObjeto1 = _modelo.ExistenRegistros("articulos", "id", "id = '" + obj.Id + "'");
+            var existeCodigo = _modelo.ExistenRegistros("articulos", "codigo", "codigo = '" + obj.Codigo + "'");
+
+            if(existeObjeto1)
+            {
+                response.AgregarInformacion(Informaciones._223);
+            } 
+            if(existeCodigo)
+            {
+                response.AgregarInformacion(Informaciones._228);
+            } 
             if (!existeObjeto)
             {
                 response.AgregarInformacion(Informaciones._227);
@@ -45,8 +56,17 @@ namespace Controlador
             var response = new RespuestaDto();
             using var Context = new Modelo.Proveedor.Conexion(_configuration["ConnectionStrings:defaultConnection"], _configuration["ConnectionStrings:providerName"]).GetOpenConnection();
             var _modelo = new ArticulosMdl() { ObjConn = Context };
+            var existeObjeto1 = _modelo.ExistenRegistros("articulos", "id", "id = '" + obj.Id + "'");
             var existeObjeto = _modelo.ExistenRegistros("categorias", "id", "id = '" + obj.IdCategoria + "'");
-            if (!existeObjeto)
+            var existeCodigo = _modelo.ExistenRegistros("articulos", "codigo", "codigo = '" + obj.Codigo + "'");
+                      
+            /* if (existeObjeto1)
+            {
+                response.AgregarInformacion(Informaciones._202);
+            }else if(existeCodigo)
+            {
+                response.AgregarInformacion(Informaciones._228);
+            }else */ if (!existeObjeto)
             {
                 response.AgregarInformacion(Informaciones._202);
             }

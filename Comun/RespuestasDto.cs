@@ -151,6 +151,7 @@ namespace Comun
         public static RespuestaDto _225 { get { return new RespuestaDto("225", "No fue posible eliminar el registro", TipoMensajeRespuesta.info); } }
         public static RespuestaDto _226 { get { return new RespuestaDto("226", "No existe información para eliminar", TipoMensajeRespuesta.info); } }
         public static RespuestaDto _227 { get { return new RespuestaDto("227", "Datos referenciados no existen", TipoMensajeRespuesta.info); } }
+        public static RespuestaDto _228 { get { return new RespuestaDto("228", "El código para el producto ingresado, ya existe.", TipoMensajeRespuesta.info); } }
 
     }
 

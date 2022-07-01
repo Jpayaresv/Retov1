@@ -1,4 +1,4 @@
-﻿using Comun;
+using Comun;
 using Controlador.Interfaces;
 using Microsoft.Extensions.Configuration;
 using Modelo;
@@ -10,22 +10,23 @@ using System.Threading.Tasks;
 
 namespace Controlador
 {
-    public class UsuariosCtl : ClaseBase, IGenericoControlador<Usuarios>
+    public class CategoriasCtl : ClaseBase, IGenericoControlador<Categorias>
     {
         private readonly IConfiguration _configuration;
 
-        public UsuariosCtl(IConfiguration configuration) : base(configuration)
+        public  CategoriasCtl(IConfiguration configuration) : base(configuration)
         {
             _configuration = configuration;
         }
 
-        public RespuestaDto Crear(Usuarios obj)
+        public RespuestaDto Crear(Categorias obj)
         {
 
             var response = new RespuestaDto();
             using var Context = new Modelo.Proveedor.Conexion(_configuration["ConnectionStrings:defaultConnection"], _configuration["ConnectionStrings:providerName"]).GetOpenConnection();
-            var _modelo = new UsuariosMdl() { ObjConn = Context };
-            var existeObjeto = _modelo.ExistenRegistros("usuarios", "username", "username = '" + obj.Username + "'");
+            var _modelo = new CategoriasMdl() { ObjConn = Context };
+            var existeObjeto = _modelo.ExistenRegistros("categorias", "id", "id = '" + obj.Id + "'");
+            
             if (existeObjeto)
             {
                 response.AgregarInformacion(Informaciones._223);
@@ -40,12 +41,13 @@ namespace Controlador
             return response;
         }
 
-        public RespuestaDto Actualizar(Usuarios obj)
+        public RespuestaDto Actualizar(Categorias obj)
         {
             var response = new RespuestaDto();
             using var Context = new Modelo.Proveedor.Conexion(_configuration["ConnectionStrings:defaultConnection"], _configuration["ConnectionStrings:providerName"]).GetOpenConnection();
-            var _modelo = new UsuariosMdl() { ObjConn = Context };
-            var existeObjeto = _modelo.ExistenRegistros("usuarios", "username", "username = '" + obj.Username + "'");
+            var _modelo = new CategoriasMdl() { ObjConn = Context };
+            var existeObjeto = _modelo.ExistenRegistros("categorias", "id", "id = '" + obj.Id + "'");
+            
             if (!existeObjeto)
             {
                 response.AgregarInformacion(Informaciones._202);
@@ -60,12 +62,12 @@ namespace Controlador
             return response;
         }
 
-        public RespuestaDto Eliminar(Usuarios obj)
+        public RespuestaDto Eliminar(Categorias obj)
         {
             var response = new RespuestaDto();
             using var Context = new Modelo.Proveedor.Conexion(_configuration["ConnectionStrings:defaultConnection"], _configuration["ConnectionStrings:providerName"]).GetOpenConnection();
-            var _modelo = new UsuariosMdl() { ObjConn = Context };
-            var existeObjeto = _modelo.ExistenRegistros("usuarios", "username", "username = '" + obj.Username + "'");
+            var _modelo = new CategoriasMdl() { ObjConn = Context };
+            var existeObjeto = _modelo.ExistenRegistros("categorias", "id", "id = '" + obj.Id + "'");
             if (!existeObjeto)
             {
                 response.AgregarInformacion(Informaciones._226);
@@ -80,22 +82,22 @@ namespace Controlador
             return response;
         }
 
-        public IEnumerable<Usuarios> ObtenerTodos(Usuarios parameters)
+        public IEnumerable<Categorias> ObtenerTodos(Categorias parameters)
         {
             using var Context = new Modelo.Proveedor.Conexion(_configuration["ConnectionStrings:defaultConnection"], _configuration["ConnectionStrings:providerName"]).GetOpenConnection();
-            var _modelo = new UsuariosMdl() { ObjConn = Context };
+            var _modelo = new CategoriasMdl() { ObjConn = Context };
             var condicion = "";
-            if(parameters.Username != null) {
-                condicion = " and username='" + parameters.Username + "'";
+            if(parameters.Id!= null ) {
+                condicion = " and id='" + parameters.Id + "'";
             }
 
             return _modelo.ObtenerTodos(condicion, string.Empty, null);
         }
 
-        public Usuarios ObtenerUnicoPorLlave(Usuarios parameter)
+        public Categorias ObtenerUnicoPorLlave(Categorias parameter)
         {
             using var Context = new Modelo.Proveedor.Conexion(_configuration["ConnectionStrings:defaultConnection"], _configuration["ConnectionStrings:providerName"]).GetOpenConnection();
-            var _modelo = new UsuariosMdl() { ObjConn = Context };
+            var _modelo = new CategoriasMdl() { ObjConn = Context };
             return _modelo.ObtenerUnicoPorLlave(parameter);
         }
     }

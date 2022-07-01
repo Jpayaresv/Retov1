@@ -1,4 +1,4 @@
-﻿using Comun;
+using Comun;
 using Controlador.Interfaces;
 using Microsoft.Extensions.Configuration;
 using Modelo;
@@ -10,23 +10,25 @@ using System.Threading.Tasks;
 
 namespace Controlador
 {
-    public class UsuariosCtl : ClaseBase, IGenericoControlador<Usuarios>
+    public class InventarioCtl : ClaseBase, IGenericoControlador<Inventario>
     {
         private readonly IConfiguration _configuration;
 
-        public UsuariosCtl(IConfiguration configuration) : base(configuration)
+        public  InventarioCtl(IConfiguration configuration) : base(configuration)
         {
             _configuration = configuration;
         }
 
-        public RespuestaDto Crear(Usuarios obj)
+        public RespuestaDto Crear(Inventario obj)
         {
 
             var response = new RespuestaDto();
             using var Context = new Modelo.Proveedor.Conexion(_configuration["ConnectionStrings:defaultConnection"], _configuration["ConnectionStrings:providerName"]).GetOpenConnection();
-            var _modelo = new UsuariosMdl() { ObjConn = Context };
-            var existeObjeto = _modelo.ExistenRegistros("usuarios", "username", "username = '" + obj.Username + "'");
-            if (existeObjeto)
+            var _modelo = new InventarioMdl() { ObjConn = Context };
+            var existeObjeto = _modelo.ExistenRegistros("inventario", "idarticulo", "idarticulo = '" + obj.IdArticulo + "'");
+            var existeObjeto1 = _modelo.ExistenRegistros("inventario", "idbodega", "idbodega = '" + obj.IdBodega + "'");
+            
+            if (existeObjeto || existeObjeto1)
             {
                 response.AgregarInformacion(Informaciones._223);
             }
@@ -40,13 +42,16 @@ namespace Controlador
             return response;
         }
 
-        public RespuestaDto Actualizar(Usuarios obj)
+        public RespuestaDto Actualizar(Inventario obj)
         {
             var response = new RespuestaDto();
             using var Context = new Modelo.Proveedor.Conexion(_configuration["ConnectionStrings:defaultConnection"], _configuration["ConnectionStrings:providerName"]).GetOpenConnection();
-            var _modelo = new UsuariosMdl() { ObjConn = Context };
-            var existeObjeto = _modelo.ExistenRegistros("usuarios", "username", "username = '" + obj.Username + "'");
-            if (!existeObjeto)
+            var _modelo = new InventarioMdl() { ObjConn = Context };
+            var existeObjeto = _modelo.ExistenRegistros("inventario", "idarticulo", "idarticulo = '" + obj.IdArticulo + "'");
+            var existeObjeto1 = _modelo.ExistenRegistros("inventario", "idbodega", "idbodega = '" + obj.IdBodega + "'");
+            
+            
+            if (!existeObjeto || !existeObjeto1)
             {
                 response.AgregarInformacion(Informaciones._202);
             }
@@ -60,13 +65,14 @@ namespace Controlador
             return response;
         }
 
-        public RespuestaDto Eliminar(Usuarios obj)
+        public RespuestaDto Eliminar(Inventario obj)
         {
             var response = new RespuestaDto();
             using var Context = new Modelo.Proveedor.Conexion(_configuration["ConnectionStrings:defaultConnection"], _configuration["ConnectionStrings:providerName"]).GetOpenConnection();
-            var _modelo = new UsuariosMdl() { ObjConn = Context };
-            var existeObjeto = _modelo.ExistenRegistros("usuarios", "username", "username = '" + obj.Username + "'");
-            if (!existeObjeto)
+            var _modelo = new InventarioMdl() { ObjConn = Context };
+            var existeObjeto = _modelo.ExistenRegistros("inventario", "idarticulo", "idarticulo = '" + obj.IdArticulo + "'");
+            var existeObjeto1 = _modelo.ExistenRegistros("inventario", "idbodega", "idbodega = '" + obj.IdBodega + "'");
+            if (!existeObjeto || !existeObjeto1)
             {
                 response.AgregarInformacion(Informaciones._226);
             }
@@ -80,22 +86,22 @@ namespace Controlador
             return response;
         }
 
-        public IEnumerable<Usuarios> ObtenerTodos(Usuarios parameters)
+        public IEnumerable<Inventario> ObtenerTodos(Inventario parameters)
         {
             using var Context = new Modelo.Proveedor.Conexion(_configuration["ConnectionStrings:defaultConnection"], _configuration["ConnectionStrings:providerName"]).GetOpenConnection();
-            var _modelo = new UsuariosMdl() { ObjConn = Context };
+            var _modelo = new InventarioMdl() { ObjConn = Context };
             var condicion = "";
-            if(parameters.Username != null) {
-                condicion = " and username='" + parameters.Username + "'";
+            if(parameters.IdArticulo!= null /* && parameters.IdBodega!= null */) {
+                condicion = " and idarticulo='" + parameters.IdArticulo /* + " and idbodega='" + parameters.IdBodega */ + "'";
             }
 
             return _modelo.ObtenerTodos(condicion, string.Empty, null);
         }
 
-        public Usuarios ObtenerUnicoPorLlave(Usuarios parameter)
+        public Inventario ObtenerUnicoPorLlave(Inventario parameter)
         {
             using var Context = new Modelo.Proveedor.Conexion(_configuration["ConnectionStrings:defaultConnection"], _configuration["ConnectionStrings:providerName"]).GetOpenConnection();
-            var _modelo = new UsuariosMdl() { ObjConn = Context };
+            var _modelo = new InventarioMdl() { ObjConn = Context };
             return _modelo.ObtenerUnicoPorLlave(parameter);
         }
     }
