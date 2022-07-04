@@ -31,19 +31,19 @@ namespace Servicio.Controllers
         }
          */
         [HttpPost]
-        public IActionResult Login(string usuario, string password)
+        public IActionResult Login(Usuarios request)
         {
             RespuestaDto respuesta;
 
-            if(usuario == null || password == null)
+            if(request.Username == null || request.Password == null)
             {
                 return BadRequest();
             }
 
-            var usuariodata = _usuariosCtl.ObtenerUnicoPorLlave(new Usuarios { Username = usuario });
+            var usuariodata = _usuariosCtl.ObtenerUnicoPorLlave(new Usuarios { Username = request.Username });
             if (usuariodata == null) return NotFound();
 
-            if (usuariodata.Password != password) {
+            if (usuariodata.Password != request.Password) {
                 respuesta = new RespuestaDto();
                 respuesta.AgregarError("1000", "Password no coincide");
                 return BadRequest(respuesta);
