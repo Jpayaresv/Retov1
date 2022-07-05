@@ -23,7 +23,7 @@ namespace Servicio.Controllers
         }
 
         [HttpGet("Get")]
-        public IActionResult Get(Categorias categorias) {
+        public IActionResult Get([FromQuery] Categorias categorias) {
 /*             RespuestaDto respuesta;
             try
             {

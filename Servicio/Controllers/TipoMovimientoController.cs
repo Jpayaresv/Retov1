@@ -23,7 +23,7 @@ namespace Servicio.Controllers
         }
 
         [HttpGet("Get")]
-        public IActionResult Get(TipoMovimiento tipomovimiento) {
+        public IActionResult Get([FromQuery] TipoMovimiento tipomovimiento) {
 /*             RespuestaDto respuesta;
             try
             {

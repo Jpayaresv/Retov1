@@ -23,7 +23,7 @@ namespace Servicio.Controllers
         }
 
         [HttpGet("Get")]
-        public IActionResult Get(Movimiento movimiento) {
+        public IActionResult Get([FromQuery] Movimiento movimiento) {
 /*             RespuestaDto respuesta;
             try
             {

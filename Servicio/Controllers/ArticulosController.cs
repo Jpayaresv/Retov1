@@ -23,7 +23,7 @@ namespace Servicio.Controllers
         }
 
         [HttpGet("Get")]
-        public IActionResult Get(Articulos articulos) {
+        public IActionResult Get([FromQuery] Articulos articulos) {
 /*             RespuestaDto respuesta;
             try
             {
