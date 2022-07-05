@@ -8,7 +8,7 @@ namespace Servicio.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-//    [Authorize]
+    [Authorize]
     public class BodegasController : ControllerBase
     {
         private readonly IConfiguration _configuration;
