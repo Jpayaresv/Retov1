@@ -154,6 +154,7 @@ namespace Comun
         public static RespuestaDto _228 { get { return new RespuestaDto("228", "El código para el producto ingresado, ya existe.", TipoMensajeRespuesta.info); } }
         public static RespuestaDto _229 { get { return new RespuestaDto("229", "El código para la bodega ingresada, ya existe.", TipoMensajeRespuesta.info); } }
         public static RespuestaDto _230 { get { return new RespuestaDto("230", "El código para el tipo de movimiento ingresado, ya existe.", TipoMensajeRespuesta.info); } }
+        public static RespuestaDto _231 { get { return new RespuestaDto("231", "", TipoMensajeRespuesta.info); } }
 
     }
 

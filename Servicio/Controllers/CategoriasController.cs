@@ -84,7 +84,7 @@ namespace Servicio.Controllers
         }
 
         [HttpDelete("Eliminar")]
-        public IActionResult EliminarCategoria(Categorias categorias)
+        public IActionResult EliminarCategoria([FromQuery] Categorias categorias)
         {
             RespuestaDto respuesta;
             try

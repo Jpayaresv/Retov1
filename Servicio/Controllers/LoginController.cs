@@ -49,6 +49,13 @@ namespace Servicio.Controllers
                 return BadRequest(respuesta);
             }
 
+            if (usuariodata.Estado == 2){
+                respuesta = new RespuestaDto();
+                respuesta.AgregarError("1001", "No es posible acceder, debido a que el usuario se encuentra inactivo.");
+                return Unauthorized(respuesta);
+                
+            }
+
             string token = CreateToken(usuariodata);
 
             return Ok(new { data = usuariodata, codigo = "Ok", mensaje = "Todo Ok", token = token });

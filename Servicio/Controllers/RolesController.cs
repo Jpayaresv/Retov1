@@ -84,7 +84,7 @@ namespace Servicio.Controllers
         }
 
         [HttpDelete("Eliminar")]
-        public IActionResult EliminarArticulo(Roles roles)
+        public IActionResult EliminarArticulo([FromQuery] Roles roles)
         {
             RespuestaDto respuesta;
             try

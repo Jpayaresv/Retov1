@@ -25,8 +25,11 @@ namespace Modelo
 
         public bool Crear(Articulos input)
         {
-            sQuery = "INSERT INTO public.articulos(id, codigo, descripcion, foto, idcategoria, preciocompra, precioventa, fechacreacion, fechamodificacion) "+
-                     "VALUES (@id, @codigo, @descripcion, @foto, @idcategoria, @preciocompra, @precioventa, @fechacreacion, @fechamodificacion)"; 
+            sQuery = "Select id From public.articulos Order By id Desc Limit 1";
+/*             var x = sQuery;
+            Console.WriteLine(x); */
+            sQuery = "INSERT INTO public.articulos(codigo, descripcion, foto, idcategoria, preciocompra, precioventa, fechacreacion, fechamodificacion) "+
+                     "VALUES (@codigo, @descripcion, @foto, @idcategoria, @preciocompra, @precioventa, @fechacreacion, @fechamodificacion)"; 
                         
             return ObjConn.Execute(sQuery, input) > 0;
         }

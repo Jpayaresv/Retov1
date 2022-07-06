@@ -84,7 +84,7 @@ namespace Servicio.Controllers
         }
 
         [HttpDelete("Eliminar")]
-        public IActionResult EliminarInventario(Inventario inventario)
+        public IActionResult EliminarInventario([FromQuery] Inventario inventario)
         {
             RespuestaDto respuesta;
             try
