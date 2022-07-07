@@ -84,7 +84,7 @@ namespace Servicio.Controllers
         }
 
         [HttpDelete("Eliminar")]
-        public IActionResult EliminarBodega( [FromQuery] Bodegas bodegas)
+        public IActionResult EliminarBodega( Bodegas bodegas)
         {
             RespuestaDto respuesta;
             try

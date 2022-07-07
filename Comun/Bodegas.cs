@@ -8,5 +8,6 @@ namespace Comun
         public string? Foto { get; set; }
         public DateTime? Fechacreacion { get; set; }
         public DateTime? Fechamodificacion { get; set; }
+        public State? Estado { get; set; }
     }
 }

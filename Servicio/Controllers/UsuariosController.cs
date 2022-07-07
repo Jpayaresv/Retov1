@@ -84,7 +84,7 @@ namespace Servicio.Controllers
         }
 
         [HttpDelete("Eliminar")]
-        public IActionResult EliminarUsuario([FromQuery] Usuarios usuarios)
+        public IActionResult EliminarUsuario(Usuarios usuarios)
         {
             RespuestaDto respuesta;
             try

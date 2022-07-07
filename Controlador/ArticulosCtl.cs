@@ -2,6 +2,7 @@ using Comun;
 using Controlador.Interfaces;
 using Microsoft.Extensions.Configuration;
 using Modelo;
+using Modelo.Proveedor;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Controlador
 {
-    public class ArticulosCtl : ClaseBase, IGenericoControlador<Articulos>
+    public class ArticulosCtl :  ClaseBase, IGenericoControlador<Articulos>
     {
         private readonly IConfiguration _configuration;
 

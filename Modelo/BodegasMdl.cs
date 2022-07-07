@@ -14,7 +14,8 @@ namespace Modelo
                      "descripcion = @descripcion,"+
                      "foto = @foto,"+
                      "fechacreacion = @fechacreacion,"+
-                     "fechamodificacion = @fechamodificacion "+
+                     "fechamodificacion = @fechamodificacion,"+
+                     "estado = @estado "+
                      "WHERE id = @id";
 
             return ObjConn.Execute(sQuery, input) > 0;
@@ -22,15 +23,15 @@ namespace Modelo
 
         public bool Crear(Bodegas input)
         {
-            sQuery = "INSERT INTO public.bodegas(id, codigo, descripcion, foto, fechacreacion, fechamodificacion) "+
-                     "VALUES (@id, @codigo, @descripcion, @foto, @fechacreacion, @fechamodificacion)"; 
+            sQuery = "INSERT INTO public.bodegas(id, codigo, descripcion, foto, fechacreacion, fechamodificacion, estado) "+
+                     "VALUES (@id, @codigo, @descripcion, @foto, @fechacreacion, @fechamodificacion, @estado)"; 
                         
             return ObjConn.Execute(sQuery, input) > 0;
         }
 
         public IEnumerable<Bodegas> ObtenerTodos(string condicion, string ordenamiento, int? limit)
         {
-            sQuery = "SELECT id, codigo, descripcion, foto, fechacreacion, fechamodificacion "+
+            sQuery = "SELECT id, codigo, descripcion, foto, fechacreacion, fechamodificacion, estado "+
 	                " FROM public.bodegas " +
                      " WHERE 1=1 " ;
             if(!string.IsNullOrEmpty(condicion)) {
@@ -46,7 +47,7 @@ namespace Modelo
 
         public Bodegas ObtenerUnicoPorLlave(Bodegas parameter)
         {
-            sQuery = "SELECT id, codigo, descripcion, foto, fechacreacion, fechamodificacion "+
+            sQuery = "SELECT id, codigo, descripcion, foto, fechacreacion, fechamodificacion, estado "+
 	                " FROM public.bodegas " +
                      " WHERE 1=1 "+
                      "AND id = @id " ;

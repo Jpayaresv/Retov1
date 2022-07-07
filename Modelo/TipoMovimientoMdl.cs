@@ -14,7 +14,8 @@ namespace Modelo
                      "descripcion = @descripcion,"+
                      "factor = @factor,"+
                      "fechacreacion = @fechacreacion,"+
-                     "fechamodificacion = @fechamodificacion "+
+                     "fechamodificacion = @fechamodificacion,"+
+                     "estado = @estado "+
                      "WHERE id = @id";
 
             return ObjConn.Execute(sQuery, input) > 0;
@@ -22,15 +23,15 @@ namespace Modelo
 
         public bool Crear(TipoMovimiento input)
         {
-            sQuery = "INSERT INTO public.tipomovimiento(id, codigo, descripcion, factor, fechacreacion, fechamodificacion) "+
-                     "VALUES (@id, @codigo, @descripcion, @factor, @fechacreacion, @fechamodificacion)"; 
+            sQuery = "INSERT INTO public.tipomovimiento(id, codigo, descripcion, factor, fechacreacion, fechamodificacion, estado) "+
+                     "VALUES (@id, @codigo, @descripcion, @factor, @fechacreacion, @fechamodificacion, @estado)"; 
                         
             return ObjConn.Execute(sQuery, input) > 0;
         }
 
         public IEnumerable<TipoMovimiento> ObtenerTodos(string condicion, string ordenamiento, int? limit)
         {
-            sQuery = "SELECT id, codigo, descripcion, factor, fechacreacion, fechamodificacion "+
+            sQuery = "SELECT id, codigo, descripcion, factor, fechacreacion, fechamodificacion, estado "+
 	                " FROM public.tipomovimiento " +
                      " WHERE 1=1 " ;
             if(!string.IsNullOrEmpty(condicion)) {
@@ -46,7 +47,7 @@ namespace Modelo
 
         public TipoMovimiento ObtenerUnicoPorLlave(TipoMovimiento parameter)
         {
-            sQuery = "SELECT id, codigo, descripcion, factor, fechacreacion, fechamodificacion "+
+            sQuery = "SELECT id, codigo, descripcion, factor, fechacreacion, fechamodificacion, estado "+
 	                " FROM public.tipomovimiento " +
                      " WHERE 1=1 "+
                      "AND id = @id " ;

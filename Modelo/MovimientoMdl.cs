@@ -15,7 +15,8 @@ namespace Modelo
                      "observaciones = @observaciones,"+
                      "idarticulo = @idarticulo,"+
                      "idbodega = @idbodega,"+
-                     "cantidad = @cantidad "+
+                     "cantidad = @cantidad,"+
+                     "estado = @estado "+
                      "WHERE id = @id";
 
             return ObjConn.Execute(sQuery, input) > 0;
@@ -23,15 +24,15 @@ namespace Modelo
 
         public bool Crear(Movimiento input)
         {
-            sQuery = "INSERT INTO public.movimiento(id, fechahora, idtipomovimiento, observaciones, idarticulo, idbodega, cantidad) "+
-                     "VALUES (@id, @fechahora, @idtipomovimiento, @observaciones, @idarticulo, @idbodega, @cantidad)"; 
+            sQuery = "INSERT INTO public.movimiento(id, fechahora, idtipomovimiento, observaciones, idarticulo, idbodega, cantidad, estado) "+
+                     "VALUES (@id, @fechahora, @idtipomovimiento, @observaciones, @idarticulo, @idbodega, @cantidad, @estado)"; 
                         
             return ObjConn.Execute(sQuery, input) > 0;
         }
 
         public IEnumerable<Movimiento> ObtenerTodos(string condicion, string ordenamiento, int? limit)
         {
-            sQuery = "SELECT id, fechahora, idtipomovimiento, observaciones, idarticulo, idbodega, cantidad "+
+            sQuery = "SELECT id, fechahora, idtipomovimiento, observaciones, idarticulo, idbodega, cantidad, estado "+
 	                " FROM public.movimiento " +
                      " WHERE 1=1 " ;
             if(!string.IsNullOrEmpty(condicion)) {
@@ -47,7 +48,7 @@ namespace Modelo
 
         public Movimiento ObtenerUnicoPorLlave(Movimiento parameter)
         {
-            sQuery = "SELECT id, fechahora, idtipomovimiento, observaciones, idarticulo, idbodega, cantidad "+
+            sQuery = "SELECT id, fechahora, idtipomovimiento, observaciones, idarticulo, idbodega, cantidad, estado "+
 	                " FROM public.movimiento " +
                      " WHERE 1=1 "+
                      "AND id = @id " ;

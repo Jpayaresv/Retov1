@@ -10,7 +10,8 @@ namespace Modelo
         public bool Actualizar(Roles input)
         {
             sQuery = "UPDATE public.roles SET " +
-                     "nombre = @nombre "+
+                     "nombre = @nombre,"+
+                     "estado = @estado "+
                      "WHERE id = @id";
 
             return ObjConn.Execute(sQuery, input) > 0;
@@ -18,7 +19,7 @@ namespace Modelo
 
         public bool Crear(Roles input)
         {
-            sQuery = "INSERT INTO public.roles(id, nombre) "+
+            sQuery = "INSERT INTO public.roles(id, nombre, estado) "+
                      "VALUES (@id, @nombre)"; 
                         
             return ObjConn.Execute(sQuery, input) > 0;
@@ -26,7 +27,7 @@ namespace Modelo
 
         public IEnumerable<Roles> ObtenerTodos(string condicion, string ordenamiento, int? limit)
         {
-            sQuery = "SELECT id, nombre "+
+            sQuery = "SELECT id, nombre, estado "+
 	                " FROM public.roles " +
                      " WHERE 1=1 " ;
             if(!string.IsNullOrEmpty(condicion)) {
@@ -42,7 +43,7 @@ namespace Modelo
 
         public Roles ObtenerUnicoPorLlave(Roles parameter)
         {
-            sQuery = "SELECT id, nombre "+
+            sQuery = "SELECT id, nombre, estado"+
 	                " FROM public.roles " +
                      " WHERE 1=1 "+
                      "AND id = @id " ;

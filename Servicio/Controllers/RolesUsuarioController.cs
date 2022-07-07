@@ -63,7 +63,7 @@ namespace Servicio.Controllers
         }
 
         [HttpPost("Actualizar")]
-        public IActionResult ActualizarArticulo(RolesUsuario rolesusuario)
+        public IActionResult ActualizarRolUsuario(RolesUsuario rolesusuario)
         {
             RespuestaDto respuesta;
             try
@@ -84,7 +84,7 @@ namespace Servicio.Controllers
         }
 
         [HttpDelete("Eliminar")]
-        public IActionResult EliminarArticulo([FromQuery] RolesUsuario rolesusuario)
+        public IActionResult EliminarRolUsuario(RolesUsuario rolesusuario)
         {
             RespuestaDto respuesta;
             try

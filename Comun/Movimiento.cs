@@ -9,5 +9,6 @@ namespace Comun
         public int? IdArticulo { get; set; }
         public int? IdBodega { get; set; }
         public double? Cantidad { get; set; }
+        public State? Estado { get; set; }
     }
 }

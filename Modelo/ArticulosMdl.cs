@@ -17,7 +17,8 @@ namespace Modelo
                      "preciocompra = @preciocompra,"+
                      "precioventa = @precioventa,"+
                      "fechacreacion = @fechacreacion,"+
-                     "fechamodificacion = @fechamodificacion "+
+                     "fechamodificacion = @fechamodificacion,"+
+                     "estado = @estado "+
                      "WHERE id = @id";
 
             return ObjConn.Execute(sQuery, input) > 0;
@@ -25,18 +26,19 @@ namespace Modelo
 
         public bool Crear(Articulos input)
         {
-            sQuery = "Select id From public.articulos Order By id Desc Limit 1";
-/*             var x = sQuery;
-            Console.WriteLine(x); */
-            sQuery = "INSERT INTO public.articulos(codigo, descripcion, foto, idcategoria, preciocompra, precioventa, fechacreacion, fechamodificacion) "+
-                     "VALUES (@codigo, @descripcion, @foto, @idcategoria, @preciocompra, @precioventa, @fechacreacion, @fechamodificacion)"; 
+/*                 sQuery = "";
+                var x = sQuery;
+                Console.WriteLine(x);  */
+                //Select id From public.articulos Order By id Desc Limit 1
+            sQuery = "INSERT INTO public.articulos(id ,codigo, descripcion, foto, idcategoria, preciocompra, precioventa, fechacreacion, fechamodificacion, estado) "+
+                     "VALUES (@id, @codigo, @descripcion, @foto, @idcategoria, @preciocompra, @precioventa, @fechacreacion, @fechamodificacion, @estado)"; 
                         
             return ObjConn.Execute(sQuery, input) > 0;
         }
 
         public IEnumerable<Articulos> ObtenerTodos(string condicion, string ordenamiento, int? limit)
         {
-            sQuery = "SELECT id, codigo, descripcion, foto, idcategoria, preciocompra, precioventa, fechacreacion, fechamodificacion "+
+            sQuery = "SELECT id, codigo, descripcion, foto, idcategoria, preciocompra, precioventa, fechacreacion, fechamodificacion, estado "+
 	                " FROM public.articulos " +
                      " WHERE 1=1 " ;
             if(!string.IsNullOrEmpty(condicion)) {
@@ -52,7 +54,7 @@ namespace Modelo
 
         public Articulos ObtenerUnicoPorLlave(Articulos parameter)
         {
-            sQuery = "SELECT id, codigo, descripcion, foto, idcategoria, preciocompra, precioventa, fechacreacion, fechamodificacion "+
+            sQuery = "SELECT id, codigo, descripcion, foto, idcategoria, preciocompra, precioventa, fechacreacion, fechamodificacion, estado "+
 	                " FROM public.articulos " +
                      " WHERE 1=1 "+
                      "AND id = @id " ;

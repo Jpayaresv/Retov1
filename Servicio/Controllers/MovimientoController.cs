@@ -84,7 +84,7 @@ namespace Servicio.Controllers
         }
 
         [HttpDelete("Eliminar")]
-        public IActionResult EliminarMovimiento([FromQuery] Movimiento movimiento)
+        public IActionResult EliminarMovimiento(Movimiento movimiento)
         {
             RespuestaDto respuesta;
             try

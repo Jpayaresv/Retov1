@@ -13,7 +13,8 @@ namespace Modelo
                      "descripcion = @descripcion,"+
                      "foto = @foto,"+
                      "fechacreacion = @fechacreacion,"+
-                     "fechamodificacion = @fechamodificacion "+
+                     "fechamodificacion = @fechamodificacion,"+
+                     "estado = @estado "+
                      "WHERE id = @id";
 
             return ObjConn.Execute(sQuery, input) > 0;
@@ -21,15 +22,15 @@ namespace Modelo
 
         public bool Crear(Categorias input)
         {
-            sQuery = "INSERT INTO public.categorias(id, descripcion, foto, fechacreacion, fechamodificacion) "+
-                     "VALUES (@id, @descripcion, @foto, @fechacreacion, @fechamodificacion)"; 
+            sQuery = "INSERT INTO public.categorias(id, descripcion, foto, fechacreacion, fechamodificacion, estado) "+
+                     "VALUES (@id, @descripcion, @foto, @fechacreacion, @fechamodificacion, @estado)"; 
                         
             return ObjConn.Execute(sQuery, input) > 0;
         }
 
         public IEnumerable<Categorias> ObtenerTodos(string condicion, string ordenamiento, int? limit)
         {
-            sQuery = "SELECT id, descripcion, foto, fechacreacion, fechamodificacion "+
+            sQuery = "SELECT id, descripcion, foto, fechacreacion, fechamodificacion, estado "+
 	                " FROM public.categorias " +
                      " WHERE 1=1 " ;
             if(!string.IsNullOrEmpty(condicion)) {
@@ -45,7 +46,7 @@ namespace Modelo
 
         public Categorias ObtenerUnicoPorLlave(Categorias parameter)
         {
-            sQuery = "SELECT id, descripcion, foto, fechacreacion, fechamodificacion "+
+            sQuery = "SELECT id, descripcion, foto, fechacreacion, fechamodificacion, estado "+
 	                " FROM public.categorias " +
                      " WHERE 1=1 "+
                      "AND id = @id " ;

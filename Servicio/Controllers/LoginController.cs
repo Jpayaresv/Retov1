@@ -49,7 +49,7 @@ namespace Servicio.Controllers
                 return BadRequest(respuesta);
             }
 
-            if (usuariodata.Estado == 2){
+            if (usuariodata.Estado == State.Inactivo){
                 respuesta = new RespuestaDto();
                 respuesta.AgregarError("1001", "No es posible acceder, debido a que el usuario se encuentra inactivo.");
                 return Unauthorized(respuesta);
