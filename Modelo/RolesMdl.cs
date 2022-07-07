@@ -20,7 +20,7 @@ namespace Modelo
         public bool Crear(Roles input)
         {
             sQuery = "INSERT INTO public.roles(id, nombre, estado) "+
-                     "VALUES (@id, @nombre)"; 
+                     "VALUES (@id, @nombre, @estado)"; 
                         
             return ObjConn.Execute(sQuery, input) > 0;
         }
