@@ -23,7 +23,7 @@ namespace Modelo
         public bool Crear(Categorias input)
         {
             sQuery = "INSERT INTO public.categorias(id, descripcion, foto, fechacreacion, fechamodificacion, estado) "+
-                     "VALUES (@id, @descripcion, @foto, @fechacreacion, @fechamodificacion, @estado)"; 
+                     "VALUES (@(Select Max(id+1) from public.categorias), @descripcion, @foto, @fechacreacion, @fechamodificacion, @estado)"; 
                         
             return ObjConn.Execute(sQuery, input) > 0;
         }

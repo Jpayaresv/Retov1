@@ -16,6 +16,7 @@ namespace Modelo.Proveedor
         public IDbConnection ObjConn { get; set; }
 
         public string sQuery;
+        public string sQuery1;
         public Conexion()
         {
         }

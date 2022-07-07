@@ -24,7 +24,7 @@ namespace Modelo
         public bool Crear(TipoMovimiento input)
         {
             sQuery = "INSERT INTO public.tipomovimiento(id, codigo, descripcion, factor, fechacreacion, fechamodificacion, estado) "+
-                     "VALUES (@id, @codigo, @descripcion, @factor, @fechacreacion, @fechamodificacion, @estado)"; 
+                     "VALUES (@(Select Max(id+1) from public.tipomovimiento), @codigo, @descripcion, @factor, @fechacreacion, @fechamodificacion, @estado)"; 
                         
             return ObjConn.Execute(sQuery, input) > 0;
         }

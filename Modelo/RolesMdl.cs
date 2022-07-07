@@ -20,7 +20,7 @@ namespace Modelo
         public bool Crear(Roles input)
         {
             sQuery = "INSERT INTO public.roles(id, nombre, estado) "+
-                     "VALUES (@id, @nombre, @estado)"; 
+                     "VALUES (@(Select Max(id+1) from public.roles), @nombre, @estado)"; 
                         
             return ObjConn.Execute(sQuery, input) > 0;
         }

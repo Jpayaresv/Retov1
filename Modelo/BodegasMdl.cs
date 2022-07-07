@@ -24,7 +24,7 @@ namespace Modelo
         public bool Crear(Bodegas input)
         {
             sQuery = "INSERT INTO public.bodegas(id, codigo, descripcion, foto, fechacreacion, fechamodificacion, estado) "+
-                     "VALUES (@id, @codigo, @descripcion, @foto, @fechacreacion, @fechamodificacion, @estado)"; 
+                     "VALUES (@(Select Max(id+1) from public.bodegas), @codigo, @descripcion, @foto, @fechacreacion, @fechamodificacion, @estado)"; 
                         
             return ObjConn.Execute(sQuery, input) > 0;
         }
