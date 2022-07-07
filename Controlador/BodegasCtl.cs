@@ -26,11 +26,12 @@ namespace Controlador
             var _modelo = new BodegasMdl() { ObjConn = Context };
             var existeObjeto = _modelo.ExistenRegistros("bodegas", "id", "id = '" + obj.Id + "'");
             var existeCodigo = _modelo.ExistenRegistros("bodegas", "codigo", "codigo = '" + obj.Codigo + "'");
-            
+            var ExisteCodigoActualizar = _modelo.ExisteCodigoActualizar("bodegas", "codigo", "codigo = '" + obj.Codigo + "'", "codigo <> ( Select codigo from public.bodegas Where id = '" + obj.Id + "'"  + " )");
+
             if (!existeObjeto)
             {
                 response.AgregarInformacion(Informaciones._202);
-            }else if(existeCodigo) {
+            }else if(ExisteCodigoActualizar) {
                 response.AgregarInformacion(Informaciones._229);
             }
             else

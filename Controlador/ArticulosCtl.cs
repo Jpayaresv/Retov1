@@ -56,7 +56,8 @@ namespace Controlador
             var _modelo = new ArticulosMdl() { ObjConn = Context };
             var existeObjeto1 = _modelo.ExistenRegistros("articulos", "id", "id = '" + obj.Id + "'");
             var existeObjeto = _modelo.ExistenRegistros("categorias", "id", "id = '" + obj.IdCategoria + "'");
-            var existeCodigo = _modelo.ExistenRegistros("articulos", "codigo", "codigo = '" + obj.Codigo + "'");
+           // var existeCodigo = _modelo.ExistenRegistros("articulos", "codigo", "codigo = '" + obj.Codigo + "'");
+            var ExisteCodigoActualizar = _modelo.ExisteCodigoActualizar("articulos", "codigo", "codigo = '" + obj.Codigo + "'", "codigo <> ( Select codigo from public.articulos Where id = '" + obj.Id + "'"  + " )");
                       
             if (!existeObjeto1)
             {
@@ -64,7 +65,7 @@ namespace Controlador
             } else if (!existeObjeto)
             {
                 response.AgregarInformacion(Informaciones._227);
-            }  else if(existeCodigo)
+            }  else if(ExisteCodigoActualizar)
             {
                 response.AgregarInformacion(Informaciones._228);
             }

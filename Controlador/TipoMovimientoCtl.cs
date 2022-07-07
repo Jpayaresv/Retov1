@@ -25,12 +25,13 @@ namespace Controlador
             using var Context = new Modelo.Proveedor.Conexion(_configuration["ConnectionStrings:defaultConnection"], _configuration["ConnectionStrings:providerName"]).GetOpenConnection();
             var _modelo = new TipoMovimientoMdl() { ObjConn = Context };
             var existeObjeto = _modelo.ExistenRegistros("tipomovimiento", "id", "id = '" + obj.Id + "'");
-            var existeCodigo = _modelo.ExistenRegistros("tipomovimiento", "codigo", "codigo = '" + obj.Codigo + "'");
+            var ExisteCodigoActualizar = _modelo.ExisteCodigoActualizar("tipomovimiento", "codigo", "codigo = '" + obj.Codigo + "'", "codigo <> ( Select codigo from public.tipomovimiento Where id = '" + obj.Id + "'"  + " )");
             
-            if (existeObjeto)
+            
+            if (!existeObjeto)
             {
                 response.AgregarInformacion(Informaciones._202);
-            }else if(existeCodigo) {
+            }else if(ExisteCodigoActualizar) {
                 response.AgregarInformacion(Informaciones._230);
             }else{
                 if (_modelo.Actualizar(obj))

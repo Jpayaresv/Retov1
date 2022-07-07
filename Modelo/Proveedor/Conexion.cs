@@ -54,6 +54,16 @@ namespace Modelo.Proveedor
             return ObjConn.Query(sQuery).Any();
 
         }
+        public bool ExisteCodigoActualizar(string strTabla, string strCampo, string strCondicion, string strCondicion1)
+        {
+            if (string.IsNullOrEmpty(strCondicion))
+                sQuery = "SELECT " + strCampo + " FROM " + strTabla + "";
+            else
+                sQuery = "SELECT " + strCampo + " FROM " + strTabla + " WHERE " + strCondicion + " AND " + strCondicion1 + "";
+
+            return ObjConn.Query(sQuery).Any();
+
+        }
         public DateTime CargarCampoDatetime(string strTabla, string strCampo, string strCondicion)
         {
             if (string.IsNullOrEmpty(strCondicion))
