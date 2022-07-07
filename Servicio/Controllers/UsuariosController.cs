@@ -8,7 +8,8 @@ namespace Servicio.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
+//    [Authorize]
+    [Authorize(Roles = "Administrador")]
     public class UsuariosController : ControllerBase
     {
         private readonly IConfiguration _configuration;

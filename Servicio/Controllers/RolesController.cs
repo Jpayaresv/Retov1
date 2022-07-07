@@ -8,7 +8,7 @@ namespace Servicio.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
+    [Authorize(Roles = "Administrador")]
     public class RolesController : ControllerBase
     {
         private readonly IConfiguration _configuration;
@@ -42,7 +42,7 @@ namespace Servicio.Controllers
         } 
 
         [HttpPost("Crear")]
-        public IActionResult CrearArticulo(Roles roles)
+        public IActionResult CrearRol(Roles roles)
         {
             RespuestaDto respuesta;
             try
@@ -63,7 +63,7 @@ namespace Servicio.Controllers
         }
 
         [HttpPost("Actualizar")]
-        public IActionResult ActualizarArticulo(Roles roles)
+        public IActionResult ActualizarRol(Roles roles)
         {
             RespuestaDto respuesta;
             try
@@ -84,7 +84,7 @@ namespace Servicio.Controllers
         }
 
         [HttpDelete("Eliminar")]
-        public IActionResult EliminarArticulo(Roles roles)
+        public IActionResult EliminarRol(Roles roles)
         {
             RespuestaDto respuesta;
             try

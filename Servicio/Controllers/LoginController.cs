@@ -63,17 +63,18 @@ namespace Servicio.Controllers
 
         private string CreateToken(Usuarios usuario)
         {
-            List<Claim> claims = new List<Claim>
-            {
-                new Claim(ClaimTypes.Name, usuario.Username),
-                new Claim(ClaimTypes.Role, "Admin")
-            };
-
+  
+            List<Claim> claims = new List<Claim> ();
+            claims.Add(new Claim(ClaimTypes.Name, usuario.Username));
+            
+            if(usuario.Username == "Admin"){
+               claims.Add(new Claim(ClaimTypes.Role, "Administrador"));
+            };  
+            
             var key = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes(
                 _configuration.GetSection("AppSettings:Token").Value));
 
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha512Signature);
-
             var token = new JwtSecurityToken(
                 claims: claims,
                 expires: DateTime.Now.AddDays(1),
