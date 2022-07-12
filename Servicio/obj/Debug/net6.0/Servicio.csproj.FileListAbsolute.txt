@@ -82,3 +82,8 @@ C:\Users\Administrador\Desktop\IE Projects\demos\Retov1\Servicio\obj\Debug\net6.
 C:\Users\Administrador\Desktop\IE Projects\demos\Retov1\Servicio\obj\Debug\net6.0\Servicio.pdb
 C:\Users\Administrador\Desktop\IE Projects\demos\Retov1\Servicio\obj\Debug\net6.0\Servicio.genruntimeconfig.cache
 C:\Users\Administrador\Desktop\IE Projects\demos\Retov1\Servicio\obj\Debug\net6.0\ref\Servicio.dll
+C:\Users\Administrador\Desktop\IE Projects\demos\Retov1\Servicio\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\Administrador\Desktop\IE Projects\demos\Retov1\Servicio\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\Administrador\Desktop\IE Projects\demos\Retov1\Servicio\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\Administrador\Desktop\IE Projects\demos\Retov1\Servicio\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\Administrador\Desktop\IE Projects\demos\Retov1\Servicio\bin\Debug\net6.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll

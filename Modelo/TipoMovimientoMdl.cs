@@ -14,7 +14,7 @@ namespace Modelo
                      "descripcion = @descripcion,"+
                      "factor = @factor,"+
                      "fechacreacion = @fechacreacion,"+
-                     "fechamodificacion = @fechamodificacion,"+
+                     "fechamodificacion = now(),"+
                      "estado = @estado "+
                      "WHERE id = @id";
 
@@ -24,7 +24,7 @@ namespace Modelo
         public bool Crear(TipoMovimiento input)
         {
             sQuery = "INSERT INTO public.tipomovimiento(id, codigo, descripcion, factor, fechacreacion, fechamodificacion, estado) "+
-                     "VALUES (@(Select Max(id+1) from public.tipomovimiento), @codigo, @descripcion, @factor, @fechacreacion, @fechamodificacion, @estado)"; 
+                     "VALUES (@(Select Max(id+1) from public.tipomovimiento), @codigo, @descripcion, @factor, now(), null, @estado)"; 
                         
             return ObjConn.Execute(sQuery, input) > 0;
         }

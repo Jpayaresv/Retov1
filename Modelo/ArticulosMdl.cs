@@ -17,7 +17,7 @@ namespace Modelo
                      "preciocompra = @preciocompra,"+
                      "precioventa = @precioventa,"+
                      "fechacreacion = @fechacreacion,"+
-                     "fechamodificacion = @fechamodificacion,"+
+                     "fechamodificacion = now(),"+
                      "estado = @estado "+
                      "WHERE id = @id";
 
@@ -28,7 +28,7 @@ namespace Modelo
         {
 
             sQuery = "INSERT INTO public.articulos(id ,codigo, descripcion, foto, idcategoria, preciocompra, precioventa, fechacreacion, fechamodificacion, estado) "+
-                     "VALUES ( @(Select Max(id+1) from public.articulos) ,@codigo, @descripcion, @foto, @idcategoria, @preciocompra, @precioventa, @fechacreacion, @fechamodificacion, @estado)"; 
+                     "VALUES ( @(Select Max(id+1) from public.articulos) ,@codigo, @descripcion, @foto, @idcategoria, @preciocompra, @precioventa, now(), null, @estado)"; 
                         
             return ObjConn.Execute(sQuery, input) > 0;
         }

@@ -20,7 +20,7 @@ namespace Modelo
         public bool Crear(Inventario input)
         {
             sQuery = "INSERT INTO public.inventario(idarticulo, idbodega, saldo, fechaultimomovimiento) "+
-                     "VALUES (@idarticulo, @idbodega, @saldo, @fechaultimomovimiento)"; 
+                     "VALUES (@idarticulo, @idbodega, @saldo, now())"; 
                         
             return ObjConn.Execute(sQuery, input) > 0;
         }

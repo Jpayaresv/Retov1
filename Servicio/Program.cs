@@ -22,7 +22,6 @@ builder.Services.AddCors();
                       });
 }); */
 
-
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
     {
@@ -36,7 +35,6 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     });
 
 
-
 var app = builder.Build();
 
 app.UseCors(options => 
@@ -45,7 +43,6 @@ app.UseCors(options =>
     options.AllowAnyHeader();
     options.AllowAnyMethod();
 });
-
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

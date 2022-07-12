@@ -15,7 +15,7 @@ namespace Modelo
         public bool Crear(Usuarios input)
         {
             sQuery = "INSERT INTO public.usuarios(username, password, ultimologin, nombre, estado, fechacreacion, fechamodificacion)" +
-	                 "VALUES (@username, @password,@ultimologin, @nombre, @estado, @fechacreacion, @fechamodificacion)";
+	                 "VALUES (@username, @password,@ultimologin, @nombre, @estado, now(), null)";
                         
             return ObjConn.Execute(sQuery, input) > 0;
         }
@@ -29,7 +29,7 @@ namespace Modelo
                      "nombre = @nombre," +
                      "estado = @estado," +
                      "fechacreacion = @fechacreacion,"+
-                     "fechamodificacion = @fechamodificacion " +
+                     "fechamodificacion = now() " +
                      "WHERE username = @username";       
 
             return ObjConn.Execute(sQuery, input) > 0;
