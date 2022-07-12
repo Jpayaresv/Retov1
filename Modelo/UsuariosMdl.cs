@@ -15,22 +15,30 @@ namespace Modelo
         public bool Crear(Usuarios input)
         {
             sQuery = "INSERT INTO public.usuarios(username, password, ultimologin, nombre, estado, fechacreacion, fechamodificacion)" +
-	                 "VALUES (@username, @password,@ultimologin, @nombre, @estado, now(), null)";
+	                 "VALUES (@username, @password, null, @nombre, @estado, now(), null)";
                         
             return ObjConn.Execute(sQuery, input) > 0;
         }
 
         public bool Actualizar(Usuarios input)
         {
-            sQuery = "UPDATE usuarios SET " +
+            sQuery = "UPDATE public.usuarios SET " +
                      "username = @username," +
                      "password = @password," +
-                     "ultimologin = @ultimologin,"+
+                     "ultimologin = now(),"+
                      "nombre = @nombre," +
                      "estado = @estado," +
                      "fechacreacion = @fechacreacion,"+
                      "fechamodificacion = now() " +
                      "WHERE username = @username";       
+
+            return ObjConn.Execute(sQuery, input) > 0;
+        }
+        public bool AgregarUltimoLogin(Usuarios input)
+        {
+            sQuery = "UPDATE public.usuarios SET " +
+                     " ultimologin = now() "+
+                     " WHERE username = @username";       
 
             return ObjConn.Execute(sQuery, input) > 0;
         }

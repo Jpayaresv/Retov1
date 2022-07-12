@@ -60,6 +60,17 @@ namespace Controlador
             return response;
         }
 
+        public RespuestaDto AgregarUltimoLogin(Usuarios obj)
+        {
+            var response = new RespuestaDto();
+            using var Context = new Modelo.Proveedor.Conexion(_configuration["ConnectionStrings:defaultConnection"], _configuration["ConnectionStrings:providerName"]).GetOpenConnection();
+            var _modelo = new UsuariosMdl() { ObjConn = Context };
+            
+            _modelo.AgregarUltimoLogin(obj);
+
+            return null;
+        }
+
         public RespuestaDto Eliminar(Usuarios obj)
         {
             var response = new RespuestaDto();

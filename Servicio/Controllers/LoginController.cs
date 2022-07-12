@@ -34,6 +34,7 @@ namespace Servicio.Controllers
         public IActionResult Login(Usuarios request)
         {
             RespuestaDto respuesta;
+            RespuestaDto rta;
 
             if(request.Username == null || request.Password == null)
             {
@@ -57,6 +58,7 @@ namespace Servicio.Controllers
             }
 
             string token = CreateToken(usuariodata);
+            rta = _usuariosCtl.AgregarUltimoLogin(request);
 
             return Ok(new { data = usuariodata, codigo = "Ok", mensaje = "Todo Ok", token = token });
         }
